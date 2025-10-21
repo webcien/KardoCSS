@@ -14,6 +14,8 @@ from kardocss.utilities.layout import generate_layout_utilities
 from kardocss.utilities.borders import generate_border_utilities
 from kardocss.utilities.sizing import generate_sizing_utilities
 from kardocss.utilities.forms import generate_form_utilities
+from kardocss.utilities.badges import generate_badge_utilities
+from kardocss.utilities.gradients import generate_gradient_utilities
 
 
 class KardoCSSCompiler:
@@ -128,6 +130,12 @@ class KardoCSSCompiler:
         
         # Forms (inputs, buttons, etc.)
         utilities.append(generate_form_utilities())
+        
+        # Badges
+        utilities.append(generate_badge_utilities(self.config))
+        
+        # Gradients
+        utilities.append(generate_gradient_utilities(self.config))
         
         self.utilities = utilities
     

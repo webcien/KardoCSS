@@ -1,335 +1,274 @@
 # KardoCSS
 
-**Framework CSS 100% Mobile-First, Modular y Optimizado**
+**Framework CSS moderno, mobile-first y ultra-ligero**
 
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/status-alpha-orange.svg)]()
+KardoCSS es un framework CSS utility-first inspirado en Tailwind, pero diseñado para ser más ligero, modular y fácil de personalizar. Perfecto para proyectos que necesitan un CSS minimalista sin sacrificar funcionalidad.
 
-## Descripción
+## ✨ Características
 
-KardoCSS es un framework CSS utility-first, mobile-first y altamente optimizado, diseñado originalmente para KardoCore pero completamente independiente y utilizable en cualquier proyecto web.
+- 🎯 **Utility-first** - Clases utilitarias con prefijo `k-`
+- 📱 **Mobile-first** - Diseño responsive desde el inicio
+- ⚡ **Ultra-ligero** - Solo 24.7 KB minificado con todas las utilidades
+- 🎨 **Personalizable** - Configuración flexible vía Python
+- 🔧 **Modular** - Importa solo lo que necesitas
+- 🚀 **Sin dependencias** - CSS puro generado desde Python
+- 📦 **50+ utilidades de formularios** - Inputs, selects, checkboxes modernos
+- 🎨 **Sistema de badges** - Badges con 8 variantes de color
+- 🌈 **Gradientes predefinidos** - 12 gradientes listos para usar
 
-### Características Principales
-
-- **100% Mobile-First**: Diseñado desde cero para dispositivos móviles
-- **Utility-First**: Clases utilitarias componibles y predecibles
-- **Compilador Propio**: Sistema de compilación rápido y eficiente
-- **Prefijo Único**: Todas las clases usan el prefijo `k-` para evitar conflictos
-- **Responsive**: Sistema de breakpoints intuitivo y flexible
-- **Optimizado**: CSS minificado y optimizado para producción
-- **Extensible**: Fácil de personalizar y extender
-- **Zero Dependencies**: Sin dependencias externas
-
-### Filosofía
-
-KardoCSS sigue los principios de diseño moderno:
-
-- **Composición sobre herencia**
-- **Utilidades sobre componentes predefinidos**
-- **Mobile-first sobre desktop-first**
-- **Rendimiento sobre conveniencia**
-- **Simplicidad sobre complejidad**
-
-## Instalación
+## 📦 Instalación
 
 ```bash
-# NPM (próximamente)
-npm install -D kardocss
-
-# O clonar el repositorio
-git clone https://github.com/webcien/KardoCSS.git
-cd kardocss
+pip install kardocss
 ```
 
-## Uso Rápido
+O desde el código fuente:
 
-### 1. HTML Básico
+```bash
+git clone https://github.com/webcien/KardoCSS.git
+cd KardoCSS
+pip install -e .
+```
+
+## 🚀 Uso Rápido
+
+### Compilar CSS
+
+```python
+from kardocss.compiler import KardoCSSCompiler
+
+compiler = KardoCSSCompiler()
+
+# Compilar CSS completo
+css = compiler.compile()
+
+# Compilar y minificar
+css_min = compiler.compile(minify=True)
+
+# Guardar en archivo
+with open('kardocss.min.css', 'w') as f:
+    f.write(css_min)
+```
+
+### Usar en HTML
 
 ```html
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KardoCSS Example</title>
     <link rel="stylesheet" href="kardocss.min.css">
 </head>
-<body class="k-bg-gray-100">
-    <div class="k-container k-mx-auto k-p-4">
-        <h1 class="k-text-3xl k-font-bold k-text-primary k-mb-4">
-            ¡Hola, KardoCSS!
-        </h1>
-        <p class="k-text-lg k-text-gray-700 k-mb-6">
-            Framework CSS mobile-first y utility-first.
-        </p>
-        <button class="k-btn k-btn-primary k-px-6 k-py-3 k-rounded-lg">
-            Comenzar
-        </button>
+<body>
+    <!-- Spacing -->
+    <div class="k-p-4 k-m-2">
+        <h1 class="k-text-3xl k-font-bold k-text-blue">KardoCSS</h1>
+    </div>
+    
+    <!-- Formularios modernos -->
+    <form class="k-p-4">
+        <input type="text" class="k-input" placeholder="Tu nombre">
+        <select class="k-select">
+            <option>Opción 1</option>
+            <option>Opción 2</option>
+        </select>
+        <button class="k-btn k-btn-primary">Enviar</button>
+    </form>
+    
+    <!-- Badges -->
+    <span class="k-badge k-badge-primary">Nuevo</span>
+    <span class="k-badge k-badge-success">Activo</span>
+    <span class="k-badge k-badge-warning">Pendiente</span>
+    
+    <!-- Gradientes -->
+    <div class="k-gradient-sunset k-p-8 k-rounded-lg">
+        <h2 class="k-text-white">Hermoso gradiente</h2>
+    </div>
+    
+    <!-- Layout -->
+    <div class="k-flex k-justify-between k-items-center">
+        <div class="k-w-1/2">Columna 1</div>
+        <div class="k-w-1/2">Columna 2</div>
     </div>
 </body>
 </html>
 ```
 
-### 2. Responsive Design
+## 🎨 Utilidades Disponibles
 
-```html
-<div class="k-grid k-grid-cols-1 k-md:grid-cols-2 k-lg:grid-cols-4 k-gap-4">
-    <div class="k-bg-white k-p-4 k-rounded-lg k-shadow">
-        Columna 1
-    </div>
-    <div class="k-bg-white k-p-4 k-rounded-lg k-shadow">
-        Columna 2
-    </div>
-    <div class="k-bg-white k-p-4 k-rounded-lg k-shadow">
-        Columna 3
-    </div>
-    <div class="k-bg-white k-p-4 k-rounded-lg k-shadow">
-        Columna 4
-    </div>
-</div>
+### Spacing (Margin y Padding)
+```css
+k-p-{size}   /* padding en todos los lados */
+k-px-{size}  /* padding horizontal */
+k-py-{size}  /* padding vertical */
+k-pt-{size}  /* padding-top */
+k-pr-{size}  /* padding-right */
+k-pb-{size}  /* padding-bottom */
+k-pl-{size}  /* padding-left */
+
+k-m-{size}   /* margin en todos los lados */
+k-mx-{size}  /* margin horizontal */
+k-my-{size}  /* margin vertical */
+k-mt-{size}  /* margin-top */
+k-mr-{size}  /* margin-right */
+k-mb-{size}  /* margin-bottom */
+k-ml-{size}  /* margin-left */
+k-mx-auto    /* margin horizontal auto (centrar) */
 ```
 
-## Sistema de Utilidades
+**Tamaños disponibles**: 0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24, 32, 40, 48, 56, 64
 
-### Espaciado (Spacing)
-
+### Colors
 ```css
-/* Padding */
-k-p-{tamaño}    /* Padding en todos los lados */
-k-px-{tamaño}   /* Padding horizontal */
-k-py-{tamaño}   /* Padding vertical */
-k-pt-{tamaño}   /* Padding top */
-k-pr-{tamaño}   /* Padding right */
-k-pb-{tamaño}   /* Padding bottom */
-k-pl-{tamaño}   /* Padding left */
-
-/* Margin */
-k-m-{tamaño}    /* Margin en todos los lados */
-k-mx-{tamaño}   /* Margin horizontal */
-k-my-{tamaño}   /* Margin vertical */
-k-mt-{tamaño}   /* Margin top */
-k-mr-{tamaño}   /* Margin right */
-k-mb-{tamaño}   /* Margin bottom */
-k-ml-{tamaño}   /* Margin left */
-
-/* Tamaños: 0, 1, 2, 4, 6, 8, 12, 16, 20, 24, 32, 40, 48, 64 */
+k-text-{color}   /* color de texto */
+k-bg-{color}     /* color de fondo */
+k-border-{color} /* color de borde */
 ```
 
-### Colores
+**Colores disponibles**: primary, secondary, success, danger, warning, info, light, dark, white, black, gray, blue, red, green, yellow
 
+### Typography
 ```css
-/* Backgrounds */
-k-bg-primary
-k-bg-secondary
-k-bg-accent
-k-bg-white
-k-bg-black
-k-bg-gray-{100-900}
-
-/* Text */
-k-text-primary
-k-text-secondary
-k-text-white
-k-text-black
-k-text-gray-{100-900}
-
-/* Borders */
-k-border-primary
-k-border-secondary
-k-border-gray-{100-900}
-```
-
-### Tipografía
-
-```css
-/* Tamaños */
-k-text-xs      /* 0.75rem */
-k-text-sm      /* 0.875rem */
-k-text-base    /* 1rem */
-k-text-lg      /* 1.125rem */
-k-text-xl      /* 1.25rem */
-k-text-2xl     /* 1.5rem */
-k-text-3xl     /* 1.875rem */
-k-text-4xl     /* 2.25rem */
-
-/* Peso */
-k-font-thin
-k-font-light
-k-font-normal
-k-font-medium
-k-font-semibold
-k-font-bold
-k-font-black
-
-/* Alineación */
-k-text-left
-k-text-center
-k-text-right
-k-text-justify
+k-text-{size}      /* tamaño de fuente */
+k-font-{weight}    /* peso de fuente */
+k-font-{family}    /* familia de fuente */
+k-text-{align}     /* alineación de texto */
+k-leading-{value}  /* line-height */
 ```
 
 ### Layout
-
 ```css
-/* Display */
-k-block
-k-inline-block
-k-inline
-k-flex
-k-inline-flex
-k-grid
-k-inline-grid
-k-hidden
+k-flex              /* display: flex */
+k-grid              /* display: grid */
+k-block             /* display: block */
+k-inline-block      /* display: inline-block */
+k-hidden            /* display: none */
 
-/* Flexbox */
-k-flex-row
-k-flex-col
-k-flex-wrap
-k-items-start
-k-items-center
-k-items-end
-k-justify-start
-k-justify-center
-k-justify-end
-k-justify-between
-
-/* Grid */
-k-grid-cols-{1-12}
-k-gap-{tamaño}
+k-justify-{value}   /* justify-content */
+k-items-{value}     /* align-items */
+k-flex-{direction}  /* flex-direction */
+k-gap-{size}        /* gap */
 ```
 
-### Dimensiones
-
+### Formularios Modernos (Nuevo en v0.1.0)
 ```css
-/* Width */
-k-w-full       /* 100% */
-k-w-screen     /* 100vw */
-k-w-auto
-k-w-{fracción} /* 1/2, 1/3, 2/3, 1/4, 3/4, etc. */
-
-/* Height */
-k-h-full       /* 100% */
-k-h-screen     /* 100vh */
-k-h-auto
+k-input             /* Input moderno con focus states */
+k-textarea          /* Textarea con auto-resize */
+k-select            /* Select estilizado */
+k-checkbox          /* Checkbox personalizado */
+k-radio             /* Radio button personalizado */
+k-switch            /* Toggle switch */
+k-input-group       /* Grupo de inputs */
+k-form-label        /* Label de formulario */
+k-form-error        /* Mensaje de error */
+k-form-help         /* Texto de ayuda */
+k-input-icon        /* Input con icono */
+k-input-loading     /* Estado de carga */
 ```
 
-### Bordes y Sombras
-
+### Badges (Nuevo en v0.1.0)
 ```css
-/* Border Radius */
-k-rounded-none
-k-rounded-sm
-k-rounded
-k-rounded-lg
-k-rounded-full
-
-/* Shadows */
-k-shadow-none
-k-shadow-sm
-k-shadow
-k-shadow-md
-k-shadow-lg
-k-shadow-xl
+k-badge                 /* Badge base */
+k-badge-primary         /* Badge azul */
+k-badge-secondary       /* Badge gris */
+k-badge-success         /* Badge verde */
+k-badge-danger          /* Badge rojo */
+k-badge-warning         /* Badge amarillo */
+k-badge-info            /* Badge cyan */
+k-badge-light           /* Badge claro */
+k-badge-dark            /* Badge oscuro */
+k-badge-outline-{color} /* Badge con borde */
 ```
 
-## Breakpoints Responsive
-
-KardoCSS usa un sistema mobile-first de breakpoints:
-
+### Gradientes (Nuevo en v0.1.0)
 ```css
-/* Mobile (default) */
-k-p-4
-
-/* Tablet (768px+) */
-k-md:p-8
-
-/* Desktop (1024px+) */
-k-lg:p-12
-
-/* Large Desktop (1280px+) */
-k-xl:p-16
+k-gradient-primary    /* Azul a índigo */
+k-gradient-sunset     /* Naranja a rosa */
+k-gradient-ocean      /* Azul a verde */
+k-gradient-fire       /* Rojo a naranja */
+k-gradient-purple     /* Púrpura a rosa */
+k-gradient-green      /* Verde a cyan */
+k-gradient-warm       /* Amarillo a rojo */
+k-gradient-cool       /* Azul a púrpura */
+k-gradient-night      /* Oscuro a azul */
+k-gradient-dawn       /* Rosa a amarillo */
+k-gradient-forest     /* Verde oscuro a claro */
+k-gradient-sky        /* Azul claro a blanco */
 ```
 
-## Compilación
-
-```bash
-# Compilar CSS
-python kardocss/cli/build.py --input src/styles.kcss --output dist/kardocss.css
-
-# Compilar y minificar
-python kardocss/cli/build.py --input src/styles.kcss --output dist/kardocss.min.css --minify
+### Borders
+```css
+k-border              /* border: 1px solid */
+k-border-{side}       /* border en un lado */
+k-border-{width}      /* grosor de borde */
+k-rounded-{size}      /* border-radius */
 ```
 
-## Estructura del Proyecto
-
-```
-kardocss/
-├── core/           # Núcleo del framework
-├── compiler/       # Compilador de CSS
-├── utilities/      # Definiciones de utilidades
-├── themes/         # Temas predefinidos
-├── cli/            # Herramientas CLI
-├── tests/          # Pruebas
-├── docs/           # Documentación
-└── examples/       # Ejemplos de uso
+### Sizing
+```css
+k-w-{size}      /* width */
+k-h-{size}      /* height */
+k-w-full        /* width: 100% */
+k-h-full        /* height: 100% */
+k-w-screen      /* width: 100vw */
+k-h-screen      /* height: 100vh */
 ```
 
-## Personalización
-
-Puedes personalizar KardoCSS mediante un archivo de configuración:
+## ⚙️ Configuración Personalizada
 
 ```python
-# kardocss.config.py
-config = {
-    "colors": {
-        "primary": "#3498db",
-        "secondary": "#2ecc71",
-        "accent": "#e74c3c",
-    },
-    "spacing": {
-        "scale": [0, 4, 8, 12, 16, 24, 32, 48, 64],
-    },
-    "breakpoints": {
-        "md": "768px",
-        "lg": "1024px",
-        "xl": "1280px",
-    },
-}
+from kardocss.core.config import KardoCSSConfig
+from kardocss.compiler import KardoCSSCompiler
+
+# Crear configuración personalizada
+config = KardoCSSConfig()
+config.set('prefix', 'mi-')  # Cambiar prefijo de k- a mi-
+config.set('colors.primary', '#ff6b6b')  # Color primario personalizado
+
+# Compilar con configuración personalizada
+compiler = KardoCSSCompiler(config)
+css = compiler.compile()
 ```
 
-## Integración con KardoCore
+## 📊 Tamaño del Framework
 
-KardoCSS está diseñado para integrarse perfectamente con KardoCore:
+| Versión | Tamaño | Gzipped |
+|---------|--------|---------|
+| kardocss.css | 32 KB | ~6 KB |
+| kardocss.min.css | 24.7 KB | ~5 KB |
 
-```python
-# En KardoTheme
-#for post in posts
-  <article class="k-card k-p-6 k-mb-4 k-shadow-md k-rounded-lg">
-    <h2 class="k-text-2xl k-font-bold k-mb-2">{post.title}</h2>
-    <p class="k-text-gray-700">{post.excerpt}</p>
-  </article>
-#end
-```
+## 🗺️ Roadmap
 
-## Roadmap
+- [x] Utilidades básicas (spacing, colors, typography)
+- [x] Sistema de layout (flex, grid)
+- [x] Borders y sizing
+- [x] Utilidades de formularios modernos
+- [x] Sistema de badges
+- [x] Gradientes predefinidos
+- [ ] Animaciones y transiciones
+- [ ] Utilidades de shadow y effects
+- [ ] Sistema de grid avanzado
+- [ ] Dark mode utilities
+- [ ] Purge CSS automático
+- [ ] CLI para compilación
+- [ ] Plugin para PostCSS
 
-- [x] Sistema de utilidades base
-- [ ] Compilador completo
-- [ ] CLI para generación
-- [ ] Temas predefinidos
-- [ ] Componentes opcionales
-- [ ] Publicación en NPM
-- [ ] Documentación completa
+## 🤝 Contribuir
 
-## Licencia
+Las contribuciones son bienvenidas. Por favor lee [CONTRIBUTING.md](./CONTRIBUTING.md) para detalles.
 
-MIT License - Ver [LICENSE](LICENSE) para más detalles.
+## 📄 Licencia
 
-## Autor
+MIT License - ver [LICENSE](./LICENSE) para detalles.
 
-Juan Quezada
+## 👥 Autor
+
+**WebCien Team**
+- GitHub: [@webcien](https://github.com/webcien)
+
+## 🌟 Inspiración
+
+Inspirado por Tailwind CSS, pero diseñado para ser más ligero y fácil de personalizar desde Python.
 
 ---
 
-**Nota**: Este proyecto está en fase alpha de desarrollo. Puede usarse en proyectos personales pero no se recomienda para producción todavía.
-
+**KardoCSS** - Framework CSS moderno y ultra-ligero 🎨
