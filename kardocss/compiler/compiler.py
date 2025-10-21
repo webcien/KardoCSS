@@ -18,6 +18,8 @@ from kardocss.utilities.badges import generate_badge_utilities
 from kardocss.utilities.gradients import generate_gradient_utilities
 from kardocss.utilities.components import generate_components
 from kardocss.utilities.effects import generate_effects
+from kardocss.utilities.mobile import generate_mobile_utilities
+from kardocss.utilities.responsive import generate_responsive_utilities
 
 
 class KardoCSSCompiler:
@@ -144,6 +146,12 @@ class KardoCSSCompiler:
         
         # Effects
         utilities.append(generate_effects())
+        
+        # Mobile & Touch
+        utilities.append(generate_mobile_utilities())
+        
+        # Responsive
+        utilities.append(generate_responsive_utilities())
         
         self.utilities = utilities
     
