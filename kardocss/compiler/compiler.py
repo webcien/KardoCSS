@@ -13,6 +13,7 @@ from kardocss.utilities.typography import generate_typography_utilities
 from kardocss.utilities.layout import generate_layout_utilities
 from kardocss.utilities.borders import generate_border_utilities
 from kardocss.utilities.sizing import generate_sizing_utilities
+from kardocss.utilities.forms import generate_form_utilities
 
 
 class KardoCSSCompiler:
@@ -124,6 +125,9 @@ class KardoCSSCompiler:
         
         # Sizing (width, height)
         utilities.extend(generate_sizing_utilities(self.config, prefix))
+        
+        # Forms (inputs, buttons, etc.)
+        utilities.append(generate_form_utilities())
         
         self.utilities = utilities
     
