@@ -16,6 +16,8 @@ from kardocss.utilities.sizing import generate_sizing_utilities
 from kardocss.utilities.forms import generate_form_utilities
 from kardocss.utilities.badges import generate_badge_utilities
 from kardocss.utilities.gradients import generate_gradient_utilities
+from kardocss.utilities.effects import generate_effect_utilities
+from kardocss.compiler.responsive import ResponsiveGenerator
 
 
 class KardoCSSCompiler:
@@ -137,6 +139,9 @@ class KardoCSSCompiler:
         # Gradients
         utilities.append(generate_gradient_utilities(self.config))
         
+        # Effects (shadows, opacity, transitions, animations)
+        utilities.extend(generate_effect_utilities(self.config, prefix))
+        
         self.utilities = utilities
     
     def _combine_styles(self) -> str:
@@ -164,22 +169,33 @@ class KardoCSSCompiler:
     
     def _generate_responsive_variants(self) -> List[str]:
         """Genera variantes responsive de las utilidades."""
+        prefix = self.config.get("prefix", "k-")
+        
+        # Crear generador responsive
+        generator = ResponsiveGenerator(self.config, prefix)
+        
+        # Generar variantes responsive de todas las utilidades
+        variants = generator.generate_responsive_variants(self.utilities)
+        
+        # Agregar variantes específicas del container
+        variants.extend(self._generate_container_responsive())
+        
+        return variants
+    
+    def _generate_container_responsive(self) -> List[str]:
+        """Genera media queries específicas para el container."""
         variants = []
+        prefix = self.config.get("prefix", "k-")
         breakpoints = self.config.get("breakpoints", {})
+        container_config = self.config.get("container", {})
+        max_widths = container_config.get("maxWidth", {})
         
         for bp_name, bp_value in breakpoints.items():
-            variants.append(f"@media (min-width: {bp_value}) {{")
-            
-            # Generar utilidades con prefijo de breakpoint
-            prefix = self.config.get("prefix", "k-")
-            bp_prefix = f"{prefix}{bp_name}\\:"
-            
-            # Aquí generaríamos las variantes responsive
-            # Por ahora, solo un placeholder
-            variants.append(f"  /* {bp_name} breakpoint utilities */")
-            
-            variants.append("}")
-            variants.append("")
+            if bp_name in max_widths:
+                max_width = max_widths[bp_name]
+                variants.append(f"@media (min-width: {bp_value}) {{")
+                variants.append(f"  .{prefix}container {{ max-width: {max_width}; }}")
+                variants.append("}")
         
         return variants
     
