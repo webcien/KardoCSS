@@ -13,6 +13,7 @@ from .badges import generate_badge_utilities
 from .gradients import generate_gradient_utilities
 from .components import generate_components
 from .effects import generate_effects
+from .dark_mode import generate as generate_dark_mode
 
 __all__ = [
     'generate_spacing_utilities',
@@ -26,4 +27,5 @@ __all__ = [
     'generate_gradient_utilities',
     'generate_components',
     'generate_effects',
+    'generate_dark_mode',
 ]

@@ -10,7 +10,7 @@ readme_file = Path(__file__).parent / "README.md"
 long_description = readme_file.read_text(encoding="utf-8") if readme_file.exists() else ""
 
 # Leer versión
-version = "0.1.0-alpha"
+version = "1.1.0"
 
 setup(
     name="kardocss",
@@ -23,7 +23,7 @@ setup(
     url="https://github.com/webcien/KardoCSS",
     packages=find_packages(),
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",

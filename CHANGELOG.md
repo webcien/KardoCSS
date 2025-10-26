@@ -5,6 +5,84 @@ Todos los cambios notables en KardoCSS serán documentados en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
 y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
+## [1.1.0] - 2025-10-26
+
+### 🎉 Características Nuevas
+
+#### Dark Mode Nativo
+- ✨ Soporte completo para modo oscuro automático usando `prefers-color-scheme`
+- ✨ Toggle manual de dark mode con clase `.dark` en `<html>`
+- ✨ Utilidades `dark:` para backgrounds, texto y bordes
+- ✨ Paleta de colores optimizada para modo oscuro
+- ✨ Variables CSS personalizadas para dark mode
+- ✨ Persistencia de preferencia en localStorage
+- ✨ Transiciones suaves entre temas
+- 📚 Guía completa: `DARK_MODE_GUIDE.md`
+- 🎨 Demo interactiva: `examples/dark-mode-demo.html`
+
+#### PurgeCSS / Tree-Shaking
+- ✨ Sistema integrado de purging para eliminar CSS no utilizado
+- ✨ Reducción de 80-90% en tamaño de producción (98.4 KB → ~8-12 KB)
+- ✨ Escaneo automático de archivos HTML/JSX/Vue/etc.
+- ✨ Safelist configurable para clases dinámicas
+- ✨ API simple de Python para integración en build tools
+- ✨ Estadísticas detalladas del proceso de purging
+- 📚 Guía completa: `PURGE_GUIDE.md`
+
+#### Accesibilidad
+- ♿ Soporte para `prefers-reduced-motion`
+- ♿ Deshabilita animaciones automáticamente para usuarios sensibles al movimiento
+- ♿ Cumplimiento WCAG 2.1 Nivel AA en ambos modos (light/dark)
+
+### 📝 Mejoras
+
+- 📖 Documentación expandida con guías detalladas
+- 📖 Ejemplos actualizados con dark mode
+- 📖 README mejorado con información de v1.1.0
+- 🎨 Mejor organización de módulos
+- 🔧 Refactorización del compilador para mejor extensibilidad
+
+### 📊 Métricas
+
+- **Tamaño completo**: 120.9 KB (sin minificar), 98.4 KB (minificado)
+- **Tamaño con PurgeCSS**: ~8-12 KB (típico en producción)
+- **Clases totales**: ~3500+ (incluyendo variantes dark mode)
+- **Overhead de dark mode**: +12.5 KB (~13%)
+
+### 🚀 Migración desde v1.0.0
+
+Si usas KardoCSS desde CDN o archivos pre-compilados, no necesitas cambiar nada. El dark mode está incluido automáticamente.
+
+Para habilitar dark mode, agrega clases `dark:` a tus elementos:
+```html
+<div class="k-bg-white dark:k-bg-gray-900">
+  Contenido
+</div>
+```
+
+Para usar PurgeCSS en compilación Python:
+```python
+css = compiler.compile(minify=True, purge=['**/*.html'])
+```
+
+---
+
+## [1.0.0] - 2025-10-26
+
+### 🎉 Primera Versión Estable
+
+- ✨ Sistema responsive completo (sm, md, lg, xl, 2xl)
+- ✨ Clase `k-container` responsive
+- ✨ Utilidades de `max-width`, `gap`, `shadow`
+- ✨ Efectos completos (transitions, animations, opacity)
+- 🏭 Módulo `responsive.py` para generación de variantes
+- 📖 Documentación completa
+- 📦 Disponible en PyPI y jsDelivr CDN
+
+**Métricas**: 87.8 KB minificado, ~3000+ clases
+
+---
+
 ## [0.1.0-alpha] - 2024-10-21
 
 ### Agregado

@@ -1,15 +1,24 @@
 # KardoCSS
 
-**Framework CSS moderno, mobile-first y ultra-ligero con variantes responsive completas**
+**Framework CSS moderno, mobile-first y ultra-ligero con Dark Mode y PurgeCSS integrados**
 
 KardoCSS es un framework CSS utility-first inspirado en Tailwind, pero diseñado para ser más ligero, modular y fácil de personalizar. Perfecto para proyectos que necesitan un CSS minimalista sin sacrificar funcionalidad.
+
+## 🆕 Novedades en v1.1.0
+
+- 🌓 **Dark Mode Nativo** - Soporte completo para modo oscuro automático y manual
+- 🧹 **PurgeCSS Integrado** - Tree-shaking automático que reduce el CSS hasta 90%
+- ♿ **Accesibilidad Mejorada** - Soporte para `prefers-reduced-motion`
+- 📚 **Documentación Expandida** - Guías completas de Dark Mode y PurgeCSS
 
 ## ✨ Características
 
 - 🎯 **Utility-first** - Clases utilitarias con prefijo `k-`
 - 🚀 **Responsive Completo** - Variantes responsive (`sm:`, `md:`, `lg:`, `xl:`, `2xl:`)
 - 📱 **Mobile-first** - Diseño responsive desde el inicio
-- ⚡ **Ultra-ligero** - Solo 87.8 KB minificado con todas las utilidades
+- ⚡ **Ultra-ligero** - 98.4 KB minificado completo, ~8-12 KB con PurgeCSS
+- 🌓 **Dark Mode** - Modo oscuro automático y manual integrado
+- 🧹 **PurgeCSS** - Tree-shaking automático para producción
 - 🎨 **Personalizable** - Configuración flexible vía Python
 - 🔧 **Modular** - Código Python organizado por utilidades
 - 🚀 **Sin dependencias** - CSS puro generado desde Python
@@ -208,14 +217,49 @@ KardoCSS es **mobile-first**. Las utilidades sin prefijo se aplican a todos los 
 - **Badges**: `k-badge`, `k-badge-primary`, `k-badge-outline-*`
 - **Gradientes**: `k-gradient-primary`, `k-gradient-sunset`, etc.
 
-*Todas las utilidades principales tienen variantes responsive.*
+*Todas las utilidades principales tienen variantes responsive y soporte para dark mode.*
+
+### Dark Mode
+
+- **Backgrounds**: `dark:k-bg-primary`, `dark:k-bg-gray-900`, etc.
+- **Text**: `dark:k-text-white`, `dark:k-text-gray-100`, etc.
+- **Borders**: `dark:k-border-gray-700`, etc.
+- **Modo automático**: Respeta `prefers-color-scheme`
+- **Modo manual**: Toggle con clase `.dark` en `<html>`
+
+**Ejemplo**:
+```html
+<div class="k-bg-white dark:k-bg-gray-900 k-text-gray-900 dark:k-text-white">
+  Contenido que se adapta automáticamente
+</div>
+```
+
+📚 **Guía completa**: [DARK_MODE_GUIDE.md](./DARK_MODE_GUIDE.md)
+
+### PurgeCSS
+
+Reduce el tamaño del CSS en producción eliminando clases no utilizadas:
+
+```python
+from kardocss.compiler import KardoCSSCompiler
+
+compiler = KardoCSSCompiler()
+css = compiler.compile(
+    minify=True,
+    purge=['**/*.html', '**/*.jsx']
+)
+```
+
+**Resultado**: 98.4 KB → ~8-12 KB (reducción de 80-90%)
+
+📚 **Guía completa**: [PURGE_GUIDE.md](./PURGE_GUIDE.md)
 
 ## 📊 Tamaño del Framework
 
-| Versión | Tamaño | Gzipped (Estimado) |
-|---|---|---|
-| `kardocss.css` | 108.0 KB | ~20 KB |
-| `kardocss.min.css` | 87.8 KB | ~15 KB |
+| Versión | Tamaño | Gzipped (Estimado) | Con PurgeCSS |
+|---|---|---|---|
+| `kardocss.css` | 120.9 KB | ~22 KB | N/A |
+| `kardocss.min.css` | 98.4 KB | ~17 KB | ~8-12 KB |
 
 ## 🗺️ Roadmap
 
@@ -229,9 +273,12 @@ KardoCSS es **mobile-first**. Las utilidades sin prefijo se aplican a todos los 
 - [x] **Utilidades de efectos (shadows, transitions, animations)**
 - [x] **Clase `k-container` responsive**
 - [x] **Utilidades de `max-width`**
-- [ ] Dark mode utilities
-- [ ] Purge CSS automático (para producción)
-- [ ] CLI para compilación
+- [x] **Dark mode nativo** (v1.1.0)
+- [x] **PurgeCSS integrado** (v1.1.0)
+- [x] **Soporte para `prefers-reduced-motion`** (v1.1.0)
+- [ ] CLI mejorado para compilación
+- [ ] Container queries
+- [ ] Aspect ratio utilities
 - [ ] Plugin para PostCSS
 - [ ] Más animaciones y transiciones
 

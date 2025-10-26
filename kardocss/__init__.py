@@ -4,12 +4,12 @@ KardoCSS - Framework CSS 100% Mobile-First
 Un framework CSS utility-first diseñado para KardoCore pero completamente
 independiente y utilizable en cualquier proyecto web.
 
-Versión: 0.1.0-alpha
+Versión: 1.1.0
 Licencia: MIT
 Autor: Juan Quezada
 """
 
-__version__ = "0.1.0-alpha"
+__version__ = "1.1.0"
 __author__ = "Juan Quezada"
 __license__ = "MIT"
 

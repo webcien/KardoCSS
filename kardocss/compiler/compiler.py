@@ -17,6 +17,7 @@ from kardocss.utilities.forms import generate_form_utilities
 from kardocss.utilities.badges import generate_badge_utilities
 from kardocss.utilities.gradients import generate_gradient_utilities
 from kardocss.utilities.effects import generate_effect_utilities
+from kardocss.utilities.dark_mode import generate as generate_dark_mode
 from kardocss.compiler.responsive import ResponsiveGenerator
 
 
@@ -73,7 +74,7 @@ class KardoCSSCompiler:
         """Genera estilos base (reset, normalize, etc.)."""
         self.base_styles = [
             "/* KardoCSS - Framework CSS Mobile-First */",
-            "/* Version: 0.1.0-alpha */",
+            "/* Version: 1.1.0 - Dark Mode & PurgeCSS */",
             "",
             "/* Base Styles */",
             "*, *::before, *::after {",
@@ -142,6 +143,9 @@ class KardoCSSCompiler:
         # Effects (shadows, opacity, transitions, animations)
         utilities.extend(generate_effect_utilities(self.config, prefix))
         
+        # Dark Mode
+        utilities.append(generate_dark_mode())
+        
         self.utilities = utilities
     
     def _combine_styles(self) -> str:
@@ -205,14 +209,31 @@ class KardoCSSCompiler:
         
         Args:
             css: CSS completo
-            files: Lista de archivos para escanear
+            files: Lista de archivos para escanear (glob patterns)
         
         Returns:
             CSS purgado
         """
-        # TODO: Implementar purging real
-        # Por ahora, retornar CSS sin cambios
-        return css
+        from kardocss.compiler.purge import CSSPurger
+        
+        purger = CSSPurger(css)
+        purger.scan_files(files)
+        
+        # Safelist: clases que siempre deben mantenerse
+        safelist = [
+            'k-container',
+            'k-btn',
+            'k-input',
+            'k-select',
+            'k-textarea',
+            'k-checkbox',
+            'k-radio',
+            'k-form-label',
+            'k-badge',
+        ]
+        purger.add_safelist(safelist)
+        
+        return purger.purge(keep_base_styles=True)
     
     def _minify(self, css: str) -> str:
         """
