@@ -11,6 +11,8 @@ from .sizing import generate_sizing_utilities
 from .forms import generate_form_utilities
 from .badges import generate_badge_utilities
 from .gradients import generate_gradient_utilities
+from .components import generate_component_utilities
+from .effects import generate_effect_utilities
 
 __all__ = [
     'generate_spacing_utilities',
@@ -22,4 +24,6 @@ __all__ = [
     'generate_form_utilities',
     'generate_badge_utilities',
     'generate_gradient_utilities',
+    'generate_component_utilities',
+    'generate_effect_utilities',
 ]
