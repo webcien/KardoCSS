@@ -54,11 +54,19 @@ ENV/
 Thumbs.db
 
 # KardoCSS specific
-*.css.map
-/dist/
+# Permitir archivos CSS pre-compilados en dist/
+!dist/kardocss.css
+!dist/kardocss.min.css
+
+# Ignorar otros archivos en dist/
+dist/*.whl
+dist/*.tar.gz
+dist/*.egg
+
+# Ignorar CSS compilado en otros lugares
 /compiled/
-*.min.css
 /examples/compiled/
+*.css.map
 
 # Documentation
 /docs/_build/

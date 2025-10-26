@@ -12,11 +12,36 @@ KardoCSS es un framework CSS utility-first inspirado en Tailwind, pero diseñado
 - 🎨 **Personalizable** - Configuración flexible vía Python
 - 🔧 **Modular** - Importa solo lo que necesitas
 - 🚀 **Sin dependencias** - CSS puro generado desde Python
-- 📦 **50+ utilidades de formularios** - Inputs, selects, checkboxes modernos
-- 🎨 **Sistema de badges** - Badges con 8 variantes de color
-- 🌈 **Gradientes predefinidos** - 12 gradientes listos para usar
+- 📦 **Pre-compilado** - Archivos CSS listos para usar
+- 💻 **Dos formas de uso** - Pre-compilado o generado con Python
+- 🌐 **CDN disponible** - Usa desde jsDelivr sin instalación
 
 ## 📦 Instalación
+
+### Opción 1: Uso Directo (Recomendado para HTML/CSS)
+
+#### Desde CDN (jsDelivr)
+
+```html
+<!-- Versión minificada (recomendado) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webcien/KardoCSS@main/dist/kardocss.min.css">
+
+<!-- Versión completa (para desarrollo) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webcien/KardoCSS@main/dist/kardocss.css">
+```
+
+#### Descarga Manual
+
+1. **Descarga el archivo CSS**:
+   - [kardocss.min.css](https://github.com/webcien/KardoCSS/raw/main/dist/kardocss.min.css) (24.7 KB) - Producción
+   - [kardocss.css](https://github.com/webcien/KardoCSS/raw/main/dist/kardocss.css) (31.5 KB) - Desarrollo
+
+2. **Incluye en tu HTML**:
+```html
+<link rel="stylesheet" href="kardocss.min.css">
+```
+
+### Opción 2: Instalación con Python (Para Personalización)
 
 ```bash
 pip install kardocss
@@ -32,7 +57,58 @@ pip install -e .
 
 ## 🚀 Uso Rápido
 
-### Compilar CSS
+### Uso Directo con HTML
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Sitio con KardoCSS</title>
+    
+    <!-- Incluir KardoCSS desde CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webcien/KardoCSS@main/dist/kardocss.min.css">
+</head>
+<body>
+    <!-- Spacing -->
+    <div class="k-p-4 k-m-2">
+        <h1 class="k-text-3xl k-font-bold k-text-blue">KardoCSS</h1>
+        <p class="k-text-gray-700">Framework CSS ultra-ligero</p>
+    </div>
+    
+    <!-- Formularios modernos -->
+    <form class="k-p-4">
+        <input type="text" class="k-input" placeholder="Tu nombre">
+        <select class="k-select">
+            <option>Opción 1</option>
+            <option>Opción 2</option>
+        </select>
+        <button class="k-btn k-btn-primary">Enviar</button>
+    </form>
+    
+    <!-- Badges -->
+    <div class="k-p-4">
+        <span class="k-badge k-badge-primary">Nuevo</span>
+        <span class="k-badge k-badge-success">Activo</span>
+        <span class="k-badge k-badge-warning">Pendiente</span>
+    </div>
+    
+    <!-- Gradientes -->
+    <div class="k-gradient-sunset k-p-8 k-rounded-lg k-text-white">
+        <h2>Hermoso gradiente</h2>
+    </div>
+    
+    <!-- Layout -->
+    <div class="k-flex k-justify-between k-items-center k-p-4">
+        <div class="k-w-1/2">Columna 1</div>
+        <div class="k-w-1/2">Columna 2</div>
+    </div>
+</body>
+</html>
+```
+
+### Compilar CSS con Python
 
 ```python
 from kardocss.compiler import KardoCSSCompiler
@@ -50,47 +126,22 @@ with open('kardocss.min.css', 'w') as f:
     f.write(css_min)
 ```
 
-### Usar en HTML
+### Build desde el Repositorio
 
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="kardocss.min.css">
-</head>
-<body>
-    <!-- Spacing -->
-    <div class="k-p-4 k-m-2">
-        <h1 class="k-text-3xl k-font-bold k-text-blue">KardoCSS</h1>
-    </div>
-    
-    <!-- Formularios modernos -->
-    <form class="k-p-4">
-        <input type="text" class="k-input" placeholder="Tu nombre">
-        <select class="k-select">
-            <option>Opción 1</option>
-            <option>Opción 2</option>
-        </select>
-        <button class="k-btn k-btn-primary">Enviar</button>
-    </form>
-    
-    <!-- Badges -->
-    <span class="k-badge k-badge-primary">Nuevo</span>
-    <span class="k-badge k-badge-success">Activo</span>
-    <span class="k-badge k-badge-warning">Pendiente</span>
-    
-    <!-- Gradientes -->
-    <div class="k-gradient-sunset k-p-8 k-rounded-lg">
-        <h2 class="k-text-white">Hermoso gradiente</h2>
-    </div>
-    
-    <!-- Layout -->
-    <div class="k-flex k-justify-between k-items-center">
-        <div class="k-w-1/2">Columna 1</div>
-        <div class="k-w-1/2">Columna 2</div>
-    </div>
-</body>
-</html>
+```bash
+# Clonar repositorio
+git clone https://github.com/webcien/KardoCSS.git
+cd KardoCSS
+
+# Instalar dependencias
+pip install -e .
+
+# Compilar CSS
+python build.py
+
+# Archivos generados en dist/
+# - kardocss.css (31.5 KB)
+# - kardocss.min.css (24.7 KB)
 ```
 
 ## 🎨 Utilidades Disponibles
@@ -149,7 +200,7 @@ k-flex-{direction}  /* flex-direction */
 k-gap-{size}        /* gap */
 ```
 
-### Formularios Modernos (Nuevo en v0.1.0)
+### Formularios Modernos
 ```css
 k-input             /* Input moderno con focus states */
 k-textarea          /* Textarea con auto-resize */
@@ -163,9 +214,14 @@ k-form-error        /* Mensaje de error */
 k-form-help         /* Texto de ayuda */
 k-input-icon        /* Input con icono */
 k-input-loading     /* Estado de carga */
+k-btn               /* Botón base */
+k-btn-primary       /* Botón primario */
+k-btn-secondary     /* Botón secundario */
+k-btn-success       /* Botón de éxito */
+k-btn-danger        /* Botón de peligro */
 ```
 
-### Badges (Nuevo en v0.1.0)
+### Badges
 ```css
 k-badge                 /* Badge base */
 k-badge-primary         /* Badge azul */
@@ -179,7 +235,7 @@ k-badge-dark            /* Badge oscuro */
 k-badge-outline-{color} /* Badge con borde */
 ```
 
-### Gradientes (Nuevo en v0.1.0)
+### Gradientes
 ```css
 k-gradient-primary    /* Azul a índigo */
 k-gradient-sunset     /* Naranja a rosa */
@@ -211,9 +267,14 @@ k-w-full        /* width: 100% */
 k-h-full        /* height: 100% */
 k-w-screen      /* width: 100vw */
 k-h-screen      /* height: 100vh */
+k-w-1/2         /* width: 50% */
+k-w-1/3         /* width: 33.333% */
+k-w-2/3         /* width: 66.666% */
+k-w-1/4         /* width: 25% */
+k-w-3/4         /* width: 75% */
 ```
 
-## ⚙️ Configuración Personalizada
+## ⚙️ Configuración Personalizada (Con Python)
 
 ```python
 from kardocss.core.config import KardoCSSConfig
@@ -233,8 +294,31 @@ css = compiler.compile()
 
 | Versión | Tamaño | Gzipped |
 |---------|--------|---------|
-| kardocss.css | 32 KB | ~6 KB |
+| kardocss.css | 31.5 KB | ~6 KB |
 | kardocss.min.css | 24.7 KB | ~5 KB |
+
+## 📥 Enlaces de Descarga
+
+### Archivos CSS Pre-compilados
+
+- **Producción (minificado)**: [kardocss.min.css](https://github.com/webcien/KardoCSS/raw/main/dist/kardocss.min.css) - 24.7 KB
+- **Desarrollo (completo)**: [kardocss.css](https://github.com/webcien/KardoCSS/raw/main/dist/kardocss.css) - 31.5 KB
+
+### CDN
+
+```html
+<!-- jsDelivr (recomendado) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webcien/KardoCSS@main/dist/kardocss.min.css">
+
+<!-- GitHub Raw (alternativo) -->
+<link rel="stylesheet" href="https://raw.githubusercontent.com/webcien/KardoCSS/main/dist/kardocss.min.css">
+```
+
+### Paquete Python
+
+```bash
+pip install kardocss
+```
 
 ## 🗺️ Roadmap
 
@@ -244,6 +328,8 @@ css = compiler.compile()
 - [x] Utilidades de formularios modernos
 - [x] Sistema de badges
 - [x] Gradientes predefinidos
+- [x] Archivos CSS pre-compilados
+- [x] CDN disponible
 - [ ] Animaciones y transiciones
 - [ ] Utilidades de shadow y effects
 - [ ] Sistema de grid avanzado
@@ -264,11 +350,22 @@ MIT License - ver [LICENSE](./LICENSE) para detalles.
 
 **WebCien Team**
 - GitHub: [@webcien](https://github.com/webcien)
+- Repositorio: [KardoCSS](https://github.com/webcien/KardoCSS)
 
 ## 🌟 Inspiración
 
 Inspirado por Tailwind CSS, pero diseñado para ser más ligero y fácil de personalizar desde Python.
 
+## 🔗 Proyectos Relacionados
+
+- **[KardoCore](https://github.com/webcien/Kardo)** - Framework CMS que usa KardoCSS
+- **[KardoTemplates](https://github.com/webcien/KardoTemplates)** - Plantillas pre-diseñadas con KardoCSS
+
 ---
 
 **KardoCSS** - Framework CSS moderno y ultra-ligero 🎨
+
+[![GitHub](https://img.shields.io/github/stars/webcien/KardoCSS?style=social)](https://github.com/webcien/KardoCSS)
+[![PyPI](https://img.shields.io/pypi/v/kardocss)](https://pypi.org/project/kardocss/)
+[![License](https://img.shields.io/github/license/webcien/KardoCSS)](https://github.com/webcien/KardoCSS/blob/main/LICENSE)
+
