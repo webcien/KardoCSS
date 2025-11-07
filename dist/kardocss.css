@@ -1,5 +1,5 @@
 /* KardoCSS - Framework CSS Mobile-First */
-/* Version: 1.1.3 - npm Support & English Documentation */
+/* Version: 1.1.4 - Bug Fixes: Transforms & Gradients */
 
 /* Base Styles */
 *, *::before, *::after {
@@ -2080,6 +2080,14 @@ input, button, textarea, select {
     background-image: linear-gradient(to bottom left, #f3f4f6, #6b7280);
 }
 
+.k-gradient-primary { background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+.k-gradient-sunset { background-image: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+.k-gradient-ocean { background-image: linear-gradient(135deg, #2e3192 0%, #1bffff 100%); }
+.k-gradient-fire { background-image: linear-gradient(135deg, #f83600 0%, #f9d423 100%); }
+.k-gradient-purple { background-image: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+.k-gradient-green { background-image: linear-gradient(135deg, #0ba360 0%, #3cba92 100%); }
+.k-gradient-warm { background-image: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%); }
+.k-gradient-cool { background-image: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%); }
 
 /* Gradientes personalizados */
 .k-bg-gradient-to-r {
@@ -2174,24 +2182,57 @@ input, button, textarea, select {
 .k-ease-back-in { transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045); }
 .k-ease-back-out { transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); }
 .k-ease-back-in-out { transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); }
-.k-transform { transform: translateX(var(--tw-translate-x, 0)) translateY(var(--tw-translate-y, 0)) rotate(var(--tw-rotate, 0)) skewX(var(--tw-skew-x, 0)) skewY(var(--tw-skew-y, 0)) scaleX(var(--tw-scale-x, 1)) scaleY(var(--tw-scale-y, 1)); }
-.k-scale-0 { --tw-scale-x: 0.0; --tw-scale-y: 0.0; }
-.k-scale-50 { --tw-scale-x: 0.5; --tw-scale-y: 0.5; }
-.k-scale-75 { --tw-scale-x: 0.75; --tw-scale-y: 0.75; }
-.k-scale-90 { --tw-scale-x: 0.9; --tw-scale-y: 0.9; }
-.k-scale-95 { --tw-scale-x: 0.95; --tw-scale-y: 0.95; }
-.k-scale-100 { --tw-scale-x: 1.0; --tw-scale-y: 1.0; }
-.k-scale-105 { --tw-scale-x: 1.05; --tw-scale-y: 1.05; }
-.k-scale-110 { --tw-scale-x: 1.1; --tw-scale-y: 1.1; }
-.k-scale-125 { --tw-scale-x: 1.25; --tw-scale-y: 1.25; }
-.k-scale-150 { --tw-scale-x: 1.5; --tw-scale-y: 1.5; }
-.k-rotate-0 { --tw-rotate: 0deg; }
-.k-rotate-45 { --tw-rotate: 45deg; }
-.k--rotate-45 { --tw-rotate: -45deg; }
-.k-rotate-90 { --tw-rotate: 90deg; }
-.k--rotate-90 { --tw-rotate: -90deg; }
-.k-rotate-180 { --tw-rotate: 180deg; }
-.k--rotate-180 { --tw-rotate: -180deg; }
+.k-scale-0 { transform: scale(0.0); }
+.k-scale-50 { transform: scale(0.5); }
+.k-scale-75 { transform: scale(0.75); }
+.k-scale-90 { transform: scale(0.9); }
+.k-scale-95 { transform: scale(0.95); }
+.k-scale-100 { transform: scale(1.0); }
+.k-scale-105 { transform: scale(1.05); }
+.k-scale-110 { transform: scale(1.1); }
+.k-scale-125 { transform: scale(1.25); }
+.k-scale-150 { transform: scale(1.5); }
+.k-rotate-0 { transform: rotate(0deg); }
+.k-rotate-45 { transform: rotate(45deg); }
+.k--rotate-45 { transform: rotate(-45deg); }
+.k-rotate-90 { transform: rotate(90deg); }
+.k--rotate-90 { transform: rotate(-90deg); }
+.k-rotate-180 { transform: rotate(180deg); }
+.k--rotate-180 { transform: rotate(-180deg); }
+.k-translate-x-0 { transform: translateX(0.0rem); }
+.k-translate-y-0 { transform: translateY(0.0rem); }
+.k-translate-x-1 { transform: translateX(0.25rem); }
+.k-translate-y-1 { transform: translateY(0.25rem); }
+.k--translate-x-1 { transform: translateX(-0.25rem); }
+.k--translate-y-1 { transform: translateY(-0.25rem); }
+.k-translate-x-2 { transform: translateX(0.5rem); }
+.k-translate-y-2 { transform: translateY(0.5rem); }
+.k--translate-x-2 { transform: translateX(-0.5rem); }
+.k--translate-y-2 { transform: translateY(-0.5rem); }
+.k-translate-x-3 { transform: translateX(0.75rem); }
+.k-translate-y-3 { transform: translateY(0.75rem); }
+.k--translate-x-3 { transform: translateX(-0.75rem); }
+.k--translate-y-3 { transform: translateY(-0.75rem); }
+.k-translate-x-4 { transform: translateX(1.0rem); }
+.k-translate-y-4 { transform: translateY(1.0rem); }
+.k--translate-x-4 { transform: translateX(-1.0rem); }
+.k--translate-y-4 { transform: translateY(-1.0rem); }
+.k-translate-x-6 { transform: translateX(1.5rem); }
+.k-translate-y-6 { transform: translateY(1.5rem); }
+.k--translate-x-6 { transform: translateX(-1.5rem); }
+.k--translate-y-6 { transform: translateY(-1.5rem); }
+.k-translate-x-8 { transform: translateX(2.0rem); }
+.k-translate-y-8 { transform: translateY(2.0rem); }
+.k--translate-x-8 { transform: translateX(-2.0rem); }
+.k--translate-y-8 { transform: translateY(-2.0rem); }
+.k-translate-x-12 { transform: translateX(3.0rem); }
+.k-translate-y-12 { transform: translateY(3.0rem); }
+.k--translate-x-12 { transform: translateX(-3.0rem); }
+.k--translate-y-12 { transform: translateY(-3.0rem); }
+.k-translate-x-16 { transform: translateX(4.0rem); }
+.k-translate-y-16 { transform: translateY(4.0rem); }
+.k--translate-x-16 { transform: translateX(-4.0rem); }
+.k--translate-y-16 { transform: translateY(-4.0rem); }
 .k-cursor-auto { cursor: auto; }
 .k-cursor-default { cursor: default; }
 .k-cursor-pointer { cursor: pointer; }

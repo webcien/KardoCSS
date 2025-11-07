@@ -9,7 +9,7 @@ namespace WebCien\KardoCSS;
  * Proporciona métodos para incluir los archivos CSS de KardoCSS.
  * 
  * @package WebCien\KardoCSS
- * @version 1.1.3
+ * @version 1.1.4
  * @author Juan Quezada
  * @license MIT
  */
@@ -18,7 +18,7 @@ class KardoCSS
     /**
      * Versión de KardoCSS
      */
-    const VERSION = '1.1.3';
+    const VERSION = '1.1.4';
 
     /**
      * Ruta base del paquete

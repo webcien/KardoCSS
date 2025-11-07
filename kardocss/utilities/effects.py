@@ -70,21 +70,29 @@ def generate_effect_utilities(config: KardoCSSConfig, prefix: str) -> List[str]:
     utilities.append(f".{prefix}ease-back-out {{ transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); }}")
     utilities.append(f".{prefix}ease-back-in-out {{ transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); }}")
     
-    # Transform base
-    utilities.append(f".{prefix}transform {{ transform: translateX(var(--tw-translate-x, 0)) translateY(var(--tw-translate-y, 0)) rotate(var(--tw-rotate, 0)) skewX(var(--tw-skew-x, 0)) skewY(var(--tw-skew-y, 0)) scaleX(var(--tw-scale-x, 1)) scaleY(var(--tw-scale-y, 1)); }}")
-    
+    # Transform utilities (fixed to apply transform directly)
     # Scale
     scales = [0, 50, 75, 90, 95, 100, 105, 110, 125, 150]
     for scale in scales:
         scale_value = scale / 100
-        utilities.append(f".{prefix}scale-{scale} {{ --tw-scale-x: {scale_value}; --tw-scale-y: {scale_value}; }}")
+        utilities.append(f".{prefix}scale-{scale} {{ transform: scale({scale_value}); }}")
     
     # Rotate
     rotations = [0, 45, 90, 180]
     for rotation in rotations:
-        utilities.append(f".{prefix}rotate-{rotation} {{ --tw-rotate: {rotation}deg; }}")
+        utilities.append(f".{prefix}rotate-{rotation} {{ transform: rotate({rotation}deg); }}")
         if rotation > 0:
-            utilities.append(f".{prefix}-rotate-{rotation} {{ --tw-rotate: -{rotation}deg; }}")
+            utilities.append(f".{prefix}-rotate-{rotation} {{ transform: rotate(-{rotation}deg); }}")
+    
+    # Translate
+    translates = [0, 1, 2, 3, 4, 6, 8, 12, 16]
+    for translate in translates:
+        translate_value = translate * 0.25  # 0.25rem per unit
+        utilities.append(f".{prefix}translate-x-{translate} {{ transform: translateX({translate_value}rem); }}")
+        utilities.append(f".{prefix}translate-y-{translate} {{ transform: translateY({translate_value}rem); }}")
+        if translate > 0:
+            utilities.append(f".{prefix}-translate-x-{translate} {{ transform: translateX(-{translate_value}rem); }}")
+            utilities.append(f".{prefix}-translate-y-{translate} {{ transform: translateY(-{translate_value}rem); }}")
     
     # Cursor
     cursors = ["auto", "default", "pointer", "wait", "text", "move", "not-allowed"]

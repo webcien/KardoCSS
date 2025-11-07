@@ -39,6 +39,21 @@ def generate_gradient_utilities(config):
 }}
 """)
     
+    # Gradientes predefinidos (usados en ejemplos)
+    predefined_gradients = {
+        'primary': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        'sunset': 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+        'ocean': 'linear-gradient(135deg, #2e3192 0%, #1bffff 100%)',
+        'fire': 'linear-gradient(135deg, #f83600 0%, #f9d423 100%)',
+        'purple': 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
+        'green': 'linear-gradient(135deg, #0ba360 0%, #3cba92 100%)',
+        'warm': 'linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%)',
+        'cool': 'linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%)',
+    }
+    
+    for name, gradient in predefined_gradients.items():
+        css.append(f".k-gradient-{name} {{ background-image: {gradient}; }}")
+    
     # Gradientes personalizados comunes
     css.append("""
 /* Gradientes personalizados */

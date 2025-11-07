@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.4] - 2025-11-07
+
+### 🐛 Bug Fixes
+
+- **Transform utilities**: Fixed scale, rotate, and translate classes to apply transform directly instead of just setting CSS variables
+- **Gradient utilities**: Added missing predefined gradient classes (primary, sunset, ocean, fire, purple, green, warm, cool)
+- **Examples**: Fixed transitions-demo.html and index.html to work correctly
+
+### ✨ Enhancements
+
+- **dark-mode-demo.html**: Made header sticky for better navigation
+- **All examples**: Added KardoCSS logo to all example pages
+
+### 📦 Package Updates
+
+- Version bumped to 1.1.4 across all package managers
+- CSS size: 101.0 KB minified
+
+---
+
 ## [1.1.3] - 2025-11-07
 
 ### ✨ New Features
