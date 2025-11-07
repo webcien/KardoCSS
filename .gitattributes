@@ -1,0 +1,25 @@
+# .gitattributes para KardoCSS
+# Configura cómo GitHub detecta los lenguajes del repositorio
+
+# Marcar código Python como "vendored" (no contar para estadísticas)
+# Python es solo la herramienta de build, no el producto final
+kardocss/** linguist-vendored
+build.py linguist-vendored
+setup.py linguist-documentation
+test_compile.py linguist-vendored
+
+# CSS es el producto principal del framework
+dist/*.css linguist-detectable
+*.css linguist-language=CSS
+
+# PHP es la integración para Composer
+src/*.php linguist-detectable
+*.php linguist-language=PHP
+
+# Documentación
+*.md linguist-documentation
+*.txt linguist-documentation
+
+# Ejemplos
+examples/** linguist-documentation
+
