@@ -1,0 +1,51 @@
+# .npmignore para KardoCSS
+# Archivos que NO se incluirán en el paquete npm
+
+# Python source code (not needed for npm users)
+kardocss/
+build.py
+setup.py
+test_compile.py
+*.pyc
+__pycache__/
+*.egg-info/
+.pytest_cache/
+
+# PHP source code (not needed for npm users)
+src/
+composer.json
+composer.lock
+
+# Build artifacts
+build/
+*.egg
+
+# Development files
+.git/
+.gitignore
+.gitattributes
+.vscode/
+.idea/
+
+# Documentation in Spanish (keep only English for npm)
+README.es.md
+docs/es/
+
+# Examples (too large, users can see on GitHub)
+examples/
+
+# Test files
+tests/
+*.test.js
+
+# CI/CD
+.github/
+.travis.yml
+.circleci/
+
+# Misc
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+

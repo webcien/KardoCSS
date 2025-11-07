@@ -1,161 +1,929 @@
-# Guía de Instalación con Composer - KardoCSS
+# Composer Installation Guide - KardoCSS
 
-## Introducción
+## Introduction
 
-KardoCSS está disponible en [Packagist](https://packagist.org/packages/webcien/kardocss) y puede ser instalado en cualquier proyecto PHP usando Composer.
+KardoCSS is available on [Packagist](https://packagist.org/packages/webcien/kardocss) and can be installed in any PHP project using Composer.
 
 ---
 
-## Requisitos
+## Requirements
 
 - PHP >= 7.4
 - Composer
 
 ---
 
-## Instalación
+## Installation
 
-### 1. Instalar con Composer
+### 1. Install with Composer
 
-Ejecuta el siguiente comando en la raíz de tu proyecto:
+Run the following command in your project root:
 
 ```bash
 composer require webcien/kardocss
 ```
 
-Esto instalará KardoCSS en tu directorio `vendor/` y agregará la dependencia a tu `composer.json`.
+This will install KardoCSS in your `vendor/` directory and add the dependency to your `composer.json`.
 
-### 2. Incluir Autoloader
+### 2. Include Autoloader
 
-Asegúrate de incluir el autoloader de Composer en tu archivo PHP principal:
+Make sure to include the Composer autoloader in your main PHP file:
 
 ```php
 <?php
 
 require_once __DIR__ . 
-'/vendor/autoload.php
-';
 
-use WebCien\KardoCSS\KardoCSS;
 
-?>
-```
 
----
 
-## Uso Básico
 
-La clase `WebCien\KardoCSS\KardoCSS` proporciona métodos estáticos para incluir los archivos CSS.
 
-### Opción 1: Incluir desde Archivo Local (Recomendado)
 
-Este método enlaza al archivo CSS minificado que se encuentra en el paquete de Composer. Es la forma más eficiente y recomendada.
 
-```php
-<head>
-    <?php echo KardoCSS::link(); ?>
-</head>
-```
 
-**Salida HTML**:
-```html
-<link rel="stylesheet" href="vendor/webcien/kardocss/dist/kardocss.min.css">
-```
 
-### Opción 2: Incluir desde CDN
 
-Este método enlaza a la versión de jsDelivr. Útil si prefieres no servir los archivos desde tu servidor.
 
-```php
-<head>
-    <?php echo KardoCSS::link(true, true); ?>
-</head>
-```
 
-**Salida HTML**:
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webcien/KardoCSS@1.1.1/dist/kardocss.min.css">
-```
 
-### Opción 3: Inline CSS (No recomendado para producción)
 
-Este método inyecta todo el contenido del CSS directamente en el HTML. Útil para emails o componentes aislados, pero no para sitios web completos.
 
-```php
-<head>
-    <?php echo KardoCSS::inline(); ?>
-</head>
-```
 
-**Salida HTML**:
-```html
-<style>
-/* ... todo el contenido de kardocss.min.css ... */
-</style>
-```
 
----
 
-## Métodos Útiles
 
-### `KardoCSS::getVersion()`
 
-Devuelve la versión actual de KardoCSS.
 
-```php
-<p>Versión: <?php echo KardoCSS::getVersion(); ?></p>
-```
 
-### `KardoCSS::getCssPath()`
 
-Devuelve la ruta absoluta al archivo CSS completo.
 
-```php
-$path = KardoCSS::getCssPath();
-// /path/to/your/project/vendor/webcien/kardocss/dist/kardocss.css
-```
 
-### `KardoCSS::getMinifiedCssPath()`
 
-Devuelve la ruta absoluta al archivo CSS minificado.
 
-```php
-$path = KardoCSS::getMinifiedCssPath();
-// /path/to/your/project/vendor/webcien/kardocss/dist/kardocss.min.css
-```
 
-### `KardoCSS::getContent()`
 
-Devuelve el contenido del archivo CSS como un string.
 
-```php
-$css = KardoCSS::getContent();
-file_put_contents(
-'public/assets/kardocss.css
-', $css);
-```
 
-### `KardoCSS::isInstalled()`
 
-Verifica si los archivos CSS existen en el directorio `vendor/`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- `KardoCSS::isInstalled()`
+
+Verifies if the CSS files exist in the `vendor/` directory.
 
 ```php
 if (KardoCSS::isInstalled()) {
-    echo "KardoCSS está instalado correctamente.";
+    echo "KardoCSS is installed correctly.";
 }
 ```
 
 ---
 
-## Ejemplo Completo
+## Full Example
 
-Revisa el archivo `examples/php-example.php` para ver un ejemplo completo de integración.
+Check the `examples/php-example.php` file for a complete integration example.
 
 ---
 
-## Actualización
+## Updating
 
-Para actualizar KardoCSS a la última versión, ejecuta:
+To update KardoCSS to the latest version, run:
 
 ```bash
 composer update webcien/kardocss
@@ -163,50 +931,50 @@ composer update webcien/kardocss
 
 ---
 
-## Publicación en Packagist
+## Publishing to Packagist
 
-### Requisitos
+### Requirements
 
-1. Tener una cuenta en [Packagist.org](https://packagist.org)
-2. El repositorio de GitHub debe ser público
-3. El repositorio debe tener un archivo `composer.json` válido
+1. Have an account on [Packagist.org](https://packagist.org)
+2. The GitHub repository must be public
+3. The repository must have a valid `composer.json` file
 
-### Pasos
+### Steps
 
-1. **Ir a Packagist**: Inicia sesión y ve a la sección "Submit".
+1. **Go to Packagist**: Log in and go to the "Submit" section.
    - URL: https://packagist.org/packages/submit
 
-2. **Enviar Repositorio**: Pega la URL de tu repositorio de GitHub y haz clic en "Check".
+2. **Submit Repository**: Paste your GitHub repository URL and click "Check".
    - `https://github.com/webcien/KardoCSS`
 
-3. **Confirmar**: Packagist detectará tu `composer.json` y te pedirá que confirmes la publicación.
+3. **Confirm**: Packagist will detect your `composer.json` and ask you to confirm the submission.
 
-4. **Configurar Webhook**: Para que Packagist se actualice automáticamente con cada `git push`, configura un webhook en GitHub:
-   - **En GitHub**: Ve a `Settings` > `Webhooks` > `Add webhook`
-   - **Payload URL**: `https://packagist.org/api/github?username=TU_USUARIO_PACKAGIST`
+4. **Set up Webhook**: To have Packagist update automatically with each `git push`, set up a webhook on GitHub:
+   - **On GitHub**: Go to `Settings` > `Webhooks` > `Add webhook`
+   - **Payload URL**: `https://packagist.org/api/github?username=YOUR_PACKAGIST_USERNAME`
    - **Content type**: `application/json`
-   - **Secret**: Tu token de API de Packagist (lo encuentras en tu perfil de Packagist)
+   - **Secret**: Your Packagist API token (found in your Packagist profile)
    - **Events**: `push`
 
-### Versiones
+### Versions
 
-Packagist usa los **tags de Git** para las versiones. Para publicar una nueva versión:
+Packagist uses **Git tags** for versions. To publish a new version:
 
-1. **Crea un tag en Git**:
+1. **Create a Git tag**:
    ```bash
-   git tag -a v1.1.2 -m "Release v1.1.2"
+   git tag -a v1.1.3 -m "Release v1.1.3"
    ```
 
-2. **Sube el tag a GitHub**:
+2. **Push the tag to GitHub**:
    ```bash
-   git push origin v1.1.2
+   git push origin v1.1.3
    ```
 
-3. **Packagist se actualizará automáticamente** (si el webhook está configurado).
+3. **Packagist will update automatically** (if the webhook is configured).
 
 ---
 
-## Soporte
+## Support
 
-Si tienes problemas con la instalación o uso, por favor abre un issue en [GitHub](https://github.com/webcien/KardoCSS/issues).
+If you have problems with installation or usage, please open an issue on [GitHub](https://github.com/webcien/KardoCSS/issues).
 

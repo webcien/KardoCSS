@@ -1,0 +1,60 @@
+{
+  "name": "kardocss",
+  "version": "1.1.3",
+  "description": "Modern, mobile-first, ultra-lightweight CSS framework with Dark Mode and PurgeCSS built-in",
+  "main": "dist/kardocss.css",
+  "style": "dist/kardocss.css",
+  "unpkg": "dist/kardocss.min.css",
+  "jsdelivr": "dist/kardocss.min.css",
+  "files": [
+    "dist/kardocss.css",
+    "dist/kardocss.min.css",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "python3 build.py",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webcien/KardoCSS.git"
+  },
+  "keywords": [
+    "css",
+    "css-framework",
+    "utility-first",
+    "mobile-first",
+    "responsive",
+    "dark-mode",
+    "tailwind-alternative",
+    "lightweight",
+    "purgecss",
+    "frontend",
+    "ui",
+    "design-system",
+    "kardocss"
+  ],
+  "author": {
+    "name": "Juan Quezada",
+    "email": "info@webcien.com",
+    "url": "https://github.com/webcien"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webcien/KardoCSS/issues"
+  },
+  "homepage": "https://github.com/webcien/KardoCSS#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/webcien"
+  }
+}
+

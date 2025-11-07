@@ -1,193 +1,147 @@
-# Guía Completa de Transiciones y Animaciones - KardoCSS v1.1.1
+# Transitions & Animations Guide - KardoCSS
 
-## Introducción
+## Introduction
 
-KardoCSS proporciona un conjunto completo de utilidades para crear transiciones y animaciones suaves y performantes, mejorando la experiencia de usuario con interactividad y feedback visual.
+KardoCSS includes a comprehensive set of utilities for creating smooth transitions and animations.
 
 ---
 
-## Transiciones
+## Transitions
 
-### Propiedades de Transición
+### Transition Property
 
-Controla qué propiedades CSS se animan.
+Control which CSS properties are transitioned.
 
-| Clase | Propiedad | Descripción |
-|---|---|---|
-| `k-transition-none` | `transition-property: none;` | Deshabilita todas las transiciones |
-| `k-transition-all` | `transition-property: all;` | Transiciona todas las propiedades |
-| `k-transition` | `background-color, border-color, color, fill, stroke, opacity, box-shadow, transform` | Transiciona las propiedades más comunes |
-| `k-transition-colors` | `background-color, border-color, color, fill, stroke` | Transiciona solo colores |
-| `k-transition-opacity` | `opacity` | Transiciona solo opacidad |
-| `k-transition-shadow` | `box-shadow` | Transiciona solo la sombra |
-| `k-transition-transform` | `transform` | Transiciona solo transformaciones |
+| Class | Properties |
+|---|---|
+| `k-transition` | `color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter` |
+| `k-transition-all` | `all` |
+| `k-transition-colors` | `color, background-color, border-color, text-decoration-color, fill, stroke` |
+| `k-transition-opacity` | `opacity` |
+| `k-transition-shadow` | `box-shadow` |
+| `k-transition-transform` | `transform` |
+| `k-transition-none` | `none` |
 
-**Ejemplo**:
+**Example**:
 ```html
-<button class="k-transition-colors k-duration-300 hover:k-bg-primary hover:k-text-white">
+<button class="k-bg-blue-500 hover:k-bg-blue-600 k-transition-colors k-duration-300">
   Hover me
 </button>
 ```
 
----
+### Transition Duration
 
-### Duración de Transición
+Control the duration of transitions.
 
-Controla la duración de la transición.
-
-| Clase | Duración |
+| Class | Duration |
 |---|---|
-| `k-duration-75` | 75ms |
-| `k-duration-100` | 100ms |
-| `k-duration-150` | 150ms |
-| `k-duration-200` | 200ms |
-| `k-duration-300` | 300ms |
-| `k-duration-500` | 500ms |
-| `k-duration-700` | 700ms |
-| `k-duration-1000` | 1000ms (1s) |
+| `k-duration-75` | `75ms` |
+| `k-duration-100` | `100ms` |
+| `k-duration-150` | `150ms` |
+| `k-duration-200` | `200ms` |
+| `k-duration-300` | `300ms` |
+| `k-duration-500` | `500ms` |
+| `k-duration-700` | `700ms` |
+| `k-duration-1000` | `1000ms` |
 
-**Ejemplo**:
+**Example**:
 ```html
-<div class="k-transition-opacity k-duration-1000 opacity-0 hover:opacity-100">
-  Fade in lento
+<div class="k-opacity-0 hover:k-opacity-100 k-transition-opacity k-duration-500">
+  Fade in
 </div>
 ```
 
----
+### Transition Timing Function
 
-### Timing Function (Easing)
+Control the easing of transitions.
 
-Controla la curva de aceleración de la transición.
-
-| Clase | Timing Function |
+| Class | Properties |
 |---|---|
 | `k-ease-linear` | `linear` |
 | `k-ease-in` | `cubic-bezier(0.4, 0, 1, 1)` |
 | `k-ease-out` | `cubic-bezier(0, 0, 0.2, 1)` |
 | `k-ease-in-out` | `cubic-bezier(0.4, 0, 0.2, 1)` |
-| `k-ease-bounce` | `cubic-bezier(0.68, -0.55, 0.265, 1.55)` |
-| `k-ease-back-in` | `cubic-bezier(0.6, -0.28, 0.735, 0.045)` |
-| `k-ease-back-out` | `cubic-bezier(0.175, 0.885, 0.32, 1.275)` |
-| `k-ease-back-in-out` | `cubic-bezier(0.68, -0.55, 0.265, 1.55)` |
+| `k-ease-bounce` | `cubic-bezier(0.68, -0.55, 0.27, 1.55)` |
+| `k-ease-back-in` | `cubic-bezier(0.6, -0.28, 0.74, 0.05)` |
+| `k-ease-back-out` | `cubic-bezier(0.18, 0.89, 0.32, 1.28)` |
+| `k-ease-back-in-out` | `cubic-bezier(0.68, -0.55, 0.27, 1.55)` |
 
-**Ejemplo**:
+**Example**:
 ```html
-<div class="k-transition-transform k-duration-500 k-ease-bounce hover:k-scale-125">
-  Bounce!
+<div class="k-scale-100 hover:k-scale-125 k-transition-transform k-duration-300 k-ease-in-out">
+  Scale me
 </div>
 ```
 
----
+### Transition Delay
 
-### Retardo de Transición (Delay)
+Control the delay of transitions.
 
-Controla el retardo antes de que comience la transición.
-
-| Clase | Retardo |
+| Class | Delay |
 |---|---|
-| `k-delay-75` | 75ms |
-| `k-delay-100` | 100ms |
-| `k-delay-150` | 150ms |
-| `k-delay-200` | 200ms |
-| `k-delay-300` | 300ms |
-| `k-delay-500` | 500ms |
-| `k-delay-700` | 700ms |
-| `k-delay-1000` | 1000ms (1s) |
+| `k-delay-75` | `75ms` |
+| `k-delay-100` | `100ms` |
+| `k-delay-150` | `150ms` |
+| `k-delay-200` | `200ms` |
+| `k-delay-300` | `300ms` |
+| `k-delay-500` | `500ms` |
+| `k-delay-700` | `700ms` |
+| `k-delay-1000` | `1000ms` |
 
-**Ejemplo**:
+**Example**:
 ```html
-<div class="k-transition-opacity k-duration-500 k-delay-300 opacity-0 group-hover:opacity-100">
-  Aparece después de 300ms
+<div class="k-opacity-0 group-hover:k-opacity-100 k-transition-opacity k-duration-300 k-delay-500">
+  Delayed fade in
 </div>
 ```
 
 ---
 
-## Animaciones
+## Animations
 
-### Animaciones Predefinidas
+KardoCSS includes a set of pre-defined animations.
 
-| Clase | Animación |
+| Class | Animation |
 |---|---|
-| `k-animate-spin` | Rotación continua |
-| `k-animate-ping` | Pulso que se expande y desvanece |
-| `k-animate-pulse` | Opacidad que pulsa |
-| `k-animate-bounce` | Rebote vertical |
-| `k-animate-fade-in` | Fade in |
-| `k-animate-slide-in-up` | Deslizamiento hacia arriba |
-| `k-animate-slide-in-down` | Deslizamiento hacia abajo |
+| `k-animate-spin` | `spin 1s linear infinite` |
+| `k-animate-ping` | `ping 1s cubic-bezier(0, 0, 0.2, 1) infinite` |
+| `k-animate-pulse` | `pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite` |
+| `k-animate-bounce` | `bounce 1s infinite` |
+| `k-animate-fade-in` | `fadeIn 1s ease-in-out` |
+| `k-animate-slide-in-up` | `slideInUp 1s ease-in-out` |
+| `k-animate-slide-in-down` | `slideInDown 1s ease-in-out` |
 
-**Ejemplo**:
+**Example**:
 ```html
-<div class="k-animate-spin w-16 h-16 k-border-4 k-border-primary k-border-t-transparent k-rounded-full">
-  <!-- Spinner de carga -->
-</div>
-```
+<!-- Loading spinner -->
+<div class="k-w-8 k-h-8 k-border-4 k-border-blue-500 k-border-t-transparent k-rounded-full k-animate-spin"></div>
 
-### Keyframes
-
-KardoCSS define los siguientes keyframes que puedes usar en tu CSS personalizado:
-
-- `@keyframes spin`
-- `@keyframes ping`
-- `@keyframes pulse`
-- `@keyframes bounce`
-- `@keyframes fade-in`
-- `@keyframes slide-in-up`
-- `@keyframes slide-in-down`
-
----
-
-## Patrones Comunes
-
-### Botón Interactivo
-
-```html
-<button class="k-btn k-btn-primary k-transition-all k-duration-300 k-ease-in-out hover:k-scale-105 hover:k-shadow-lg active:k-scale-95">
-  Click me
-</button>
-```
-
-### Tarjeta con Hover Effect
-
-```html
-<div class="k-bg-white k-p-6 k-rounded-lg k-shadow-md k-transition-all k-duration-300 hover:k-shadow-xl hover:k-scale-105">
-  Contenido de la tarjeta
-</div>
-```
-
-### Menú Desplegable (Dropdown)
-
-```html
-<div class="k-relative group">
-  <button class="k-btn">Opciones</button>
-  <div class="k-absolute k-bg-white k-shadow-lg k-rounded-md k-mt-2 k-opacity-0 k-scale-95 group-hover:k-opacity-100 group-hover:k-scale-100 k-transition-all k-duration-200 k-ease-out">
-    <!-- Items del menú -->
-  </div>
-</div>
-```
-
-### Notificación Animada
-
-```html
-<div class="k-bg-success k-text-white k-p-4 k-rounded-lg k-animate-slide-in-up">
-  ¡Éxito!
+<!-- Notification ping -->
+<div class="k-relative">
+  <div class="k-absolute k-w-3 k-h-3 k-bg-red-500 k-rounded-full k-animate-ping"></div>
+  <div class="k-w-3 k-h-3 k-bg-red-500 k-rounded-full"></div>
 </div>
 ```
 
 ---
 
-## Accesibilidad
+## `prefers-reduced-motion`
 
-### `prefers-reduced-motion`
+KardoCSS respects the `prefers-reduced-motion` media query. If a user has enabled this setting in their OS, all animations and transitions will be disabled automatically.
 
-KardoCSS respeta la preferencia del usuario de reducir el movimiento. Si un usuario tiene esta opción activada en su sistema, **todas las transiciones y animaciones se deshabilitan automáticamente**.
+You can override this with the `motion-safe` and `motion-reduce` variants:
 
-No necesitas hacer nada para que esto funcione.
+```html
+<!-- This will animate even if reduced motion is enabled -->
+<div class="motion-safe:k-animate-spin"></div>
+
+<!-- This will NOT animate, even if reduced motion is disabled -->
+<div class="motion-reduce:k-animate-none"></div>
+```
 
 ---
 
-## Demo Interactiva
+## Full Example
 
-Para ver todas estas utilidades en acción, revisa el archivo `examples/transitions-demo.html`.
+Check the `examples/transitions-demo.html` file for a complete interactive demo.
 
