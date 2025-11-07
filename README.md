@@ -4,7 +4,14 @@
 
 KardoCSS es un framework CSS utility-first inspirado en Tailwind, pero diseñado para ser más ligero, modular y fácil de personalizar. Perfecto para proyectos que necesitan un CSS minimalista sin sacrificar funcionalidad.
 
-## 🆕 Novedades en v1.1.0
+## 🆕 Novedades en v1.1.1
+
+- ✨ **Transiciones Mejoradas** - Nuevas utilidades: `k-transition-none`, `k-delay-*`, `k-ease-bounce`, `k-ease-back-*` ([Issue #1](https://github.com/webcien/KardoCSS/issues/1))
+- 📦 **Disponible en Composer** - Ahora puedes instalar KardoCSS en proyectos PHP con `composer require webcien/kardocss`
+- 📚 **Guía de Transiciones** - Documentación completa con 30+ ejemplos interactivos
+- 🐛 **Corrección de Bugs** - Mejoras de estabilidad y rendimiento
+
+### Novedades en v1.1.0
 
 - 🌓 **Dark Mode Nativo** - Soporte completo para modo oscuro automático y manual
 - 🧹 **PurgeCSS Integrado** - Tree-shaking automático que reduce el CSS hasta 90%
@@ -23,8 +30,9 @@ KardoCSS es un framework CSS utility-first inspirado en Tailwind, pero diseñado
 - 🔧 **Modular** - Código Python organizado por utilidades
 - 🚀 **Sin dependencias** - CSS puro generado desde Python
 - 📦 **Pre-compilado** - Archivos CSS listos para usar
-- 💻 **Dos formas de uso** - Pre-compilado o generado con Python
+- 💻 **Múltiples formas de uso** - Pre-compilado, Composer (PHP), Python o CDN
 - 🌐 **CDN disponible** - Usa desde jsDelivr sin instalación
+- 📦 **Packagist** - Disponible en Composer para proyectos PHP
 
 ## 📦 Instalación
 
@@ -51,9 +59,38 @@ KardoCSS es un framework CSS utility-first inspirado en Tailwind, pero diseñado
 <link rel="stylesheet" href="kardocss.min.css">
 ```
 
-### Opción 2: Instalación con Python (Para Personalización)
+### Opción 2: Instalación con Composer (Para Proyectos PHP)
 
 ```bash
+composer require webcien/kardocss
+```
+
+**Uso en PHP**:
+```php
+<?php
+require_once __DIR__ . '/vendor/autoload.php';
+use WebCien\KardoCSS\KardoCSS;
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <?php echo KardoCSS::link(); ?>
+</head>
+<body>
+    <!-- Tu contenido aquí -->
+</body>
+</html>
+```
+
+📚 **Guía completa**: [COMPOSER_GUIDE.md](./COMPOSER_GUIDE.md)
+
+### Opción 3: Instalación con Python (Para Personalización)
+
+```bash
+# Desde PyPI
+pip install kardocss
+
+# O desde GitHub
 git clone https://github.com/webcien/KardoCSS.git
 cd KardoCSS
 pip install -e .

@@ -5,6 +5,29 @@ Todos los cambios notables en KardoCSS serán documentados en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
 y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
+## [1.1.2] - 2025-11-07
+
+### 📦 Nuevas Características
+
+- ✨ **Soporte para Composer/Packagist** - KardoCSS ahora disponible en Packagist
+- ✨ **Clase PHP** - `WebCien\KardoCSS\KardoCSS` para integración con proyectos PHP
+- ✨ **composer.json** - Configuración completa para Packagist
+- ✨ **Ejemplo PHP** - `examples/php-example.php` con uso completo
+
+### 📚 Documentación
+
+- ✨ **COMPOSER_GUIDE.md** - Guía completa de instalación y uso con Composer
+- 📖 README actualizado con sección de instalación con Composer
+- 📖 Novedades actualizadas en README
+
+### 📊 Métricas
+
+- **Archivos nuevos**: 3 (composer.json, src/KardoCSS.php, COMPOSER_GUIDE.md)
+- **Compatibilidad**: PHP >= 7.4
+- **Packagist**: `composer require webcien/kardocss`
+
+---
+
 ## [1.1.1] - 2025-11-07
 
 ### ✨ Características Nuevas (Issue #1)
