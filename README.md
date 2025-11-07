@@ -201,7 +201,17 @@ KardoCSS es **mobile-first**. Las utilidades sin prefijo se aplican a todos los 
 - **Border Width**: `k-border`, `k-border-2`, `k-border-4`, `k-border-8`
 - **Border Style**: `k-border-solid`, `k-border-dashed`, `k-border-dotted`
 
-### Effects
+### Transiciones y Animaciones
+
+- **Transiciones**: `k-transition`, `k-transition-all`, `k-transition-colors`, `k-transition-opacity`, `k-transition-shadow`, `k-transition-transform`, `k-transition-none`
+- **Duración**: `k-duration-75` a `k-duration-1000`
+- **Easing**: `k-ease-linear`, `k-ease-in`, `k-ease-out`, `k-ease-in-out`, `k-ease-bounce`, `k-ease-back-in`, `k-ease-back-out`, `k-ease-back-in-out`
+- **Delay**: `k-delay-75` a `k-delay-1000`
+- **Animaciones**: `k-animate-spin`, `k-animate-ping`, `k-animate-pulse`, `k-animate-bounce`, `k-animate-fade-in`, `k-animate-slide-in-up`, `k-animate-slide-in-down`
+
+📚 **Guía completa**: [TRANSITIONS_GUIDE.md](./TRANSITIONS_GUIDE.md)
+
+### Otros Efectos
 
 - **Box Shadow**: `k-shadow-sm`, `k-shadow`, `k-shadow-md`, `k-shadow-lg`, `k-shadow-xl`
 - **Opacity**: `k-opacity-0`, `k-opacity-25`, `k-opacity-50`, `k-opacity-75`, `k-opacity-100`

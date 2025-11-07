@@ -5,6 +5,37 @@ Todos los cambios notables en KardoCSS serán documentados en este archivo.
 El formato está basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.0.0/),
 y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
+## [1.1.1] - 2025-11-07
+
+### ✨ Características Nuevas (Issue #1)
+
+En respuesta al [Issue #1](https://github.com/webcien/KardoCSS/issues/1) de la comunidad, se han agregado utilidades de transición faltantes:
+
+- ✨ **`k-transition-none`** - Deshabilita todas las transiciones
+- ✨ **`k-delay-*`** - Retardos de transición (75ms, 100ms, 150ms, 200ms, 300ms, 500ms, 700ms, 1000ms)
+- ✨ **`k-ease-bounce`** - Función de easing con efecto bounce
+- ✨ **`k-ease-back-in`** - Función de easing back-in
+- ✨ **`k-ease-back-out`** - Función de easing back-out
+- ✨ **`k-ease-back-in-out`** - Función de easing back-in-out
+
+### 📚 Documentación
+
+- ✨ **`TRANSITIONS_GUIDE.md`** - Guía completa de transiciones y animaciones
+- ✨ **`examples/transitions-demo.html`** - Demo interactivo con 30+ ejemplos
+- 📖 README actualizado con sección de transiciones
+
+### 📊 Métricas
+
+- **Tamaño**: 121.6 KB (sin minificar), 99.0 KB (minificado)
+- **Clases nuevas**: 13 (1 transition-none + 8 delays + 4 easings)
+- **Incremento**: +0.6 KB vs v1.1.0
+
+### 🚀 Agradecimientos
+
+Gracias a [@screwtape151](https://github.com/screwtape151) por reportar el Issue #1 y sugerir estas mejoras.
+
+---
+
 ## [1.1.0] - 2025-10-26
 
 ### 🎉 Características Nuevas

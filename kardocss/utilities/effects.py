@@ -40,6 +40,7 @@ def generate_effect_utilities(config: KardoCSSConfig, prefix: str) -> List[str]:
         utilities.append(f".{prefix}z-{name} {{ z-index: {value}; }}")
     
     # Transitions
+    utilities.append(f".{prefix}transition-none {{ transition-property: none; }}")
     utilities.append(f".{prefix}transition {{ transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }}")
     utilities.append(f".{prefix}transition-all {{ transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }}")
     utilities.append(f".{prefix}transition-colors {{ transition-property: background-color, border-color, color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }}")
@@ -52,11 +53,22 @@ def generate_effect_utilities(config: KardoCSSConfig, prefix: str) -> List[str]:
     for duration in durations:
         utilities.append(f".{prefix}duration-{duration} {{ transition-duration: {duration}ms; }}")
     
+    # Delay (v1.1.1 - Issue #1)
+    delays = [75, 100, 150, 200, 300, 500, 700, 1000]
+    for delay in delays:
+        utilities.append(f".{prefix}delay-{delay} {{ transition-delay: {delay}ms; }}")
+    
     # Timing functions
     utilities.append(f".{prefix}ease-linear {{ transition-timing-function: linear; }}")
     utilities.append(f".{prefix}ease-in {{ transition-timing-function: cubic-bezier(0.4, 0, 1, 1); }}")
     utilities.append(f".{prefix}ease-out {{ transition-timing-function: cubic-bezier(0, 0, 0.2, 1); }}")
     utilities.append(f".{prefix}ease-in-out {{ transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }}")
+    
+    # Additional easing functions (v1.1.1 - Issue #1)
+    utilities.append(f".{prefix}ease-bounce {{ transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); }}")
+    utilities.append(f".{prefix}ease-back-in {{ transition-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045); }}")
+    utilities.append(f".{prefix}ease-back-out {{ transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275); }}")
+    utilities.append(f".{prefix}ease-back-in-out {{ transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); }}")
     
     # Transform base
     utilities.append(f".{prefix}transform {{ transform: translateX(var(--tw-translate-x, 0)) translateY(var(--tw-translate-y, 0)) rotate(var(--tw-rotate, 0)) skewX(var(--tw-skew-x, 0)) skewY(var(--tw-skew-y, 0)) scaleX(var(--tw-scale-x, 1)) scaleY(var(--tw-scale-y, 1)); }}")

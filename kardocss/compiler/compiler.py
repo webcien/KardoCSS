@@ -74,7 +74,7 @@ class KardoCSSCompiler:
         """Genera estilos base (reset, normalize, etc.)."""
         self.base_styles = [
             "/* KardoCSS - Framework CSS Mobile-First */",
-            "/* Version: 1.1.0 - Dark Mode & PurgeCSS */",
+            "/* Version: 1.1.1 - Transitions Enhanced (Issue #1) */",
             "",
             "/* Base Styles */",
             "*, *::before, *::after {",
