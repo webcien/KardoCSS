@@ -16,11 +16,12 @@ KardoCSS is a utility-first CSS framework inspired by Tailwind, but designed to 
 
 ---
 
-## 🆕 What's New in v1.2.0
+### 🚀 What's New in v1.2.0
 
-- ✨ **Container Queries** - Responsive components based on container size (`k-cq-md:flex-row`)
-- ⚙️ **CI/CD Size Check** - Automatic size control to keep the framework lightweight
-
+- ✨ **Optional Modules System** - Keep the core lightweight and opt-in to advanced features.
+- ✨ **Container Queries** - Now an optional module, enabled by default.
+- ⚙️ **CI/CD Size Check** - Automatic size verification to keep the framework lightweight.
+- 📺 **KardoTV Ready** - Architecture prepared for the upcoming TV breakpoints module (v1.3.0).
 ### Previous Updates
 
 - ✨ **npm Support** - KardoCSS is now available on npm!

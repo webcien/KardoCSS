@@ -189,6 +189,25 @@ class KardoCSSConfig:
                     "2xl": "1536px",
                 },
             },
+            
+            # Sistema de Módulos Opcionales
+            "modules": {
+                "container_queries": True,   # Container queries (@container)
+                "tv_breakpoints": False,     # Breakpoints TV (wide, tv) - v1.3.0
+                "fluid_typography": False,   # Tipografía fluida (clamp) - futuro
+                "aspect_ratio": False,       # Aspect ratio utilities - futuro
+                "backdrop_filters": False,   # Backdrop filters - futuro
+            },
+            
+            # Configuración de Módulo TV (para v1.3.0)
+            "tv_config": {
+                "wide_breakpoint": "1600px",
+                "tv_breakpoint": "2400px",
+                "text_scale_wide": 1.2,
+                "text_scale_tv": 1.4,
+                "space_scale_wide": 1.1,
+                "space_scale_tv": 1.2,
+            },
         }
     
     def _merge_config(self, custom_config: Dict[str, Any]) -> None:

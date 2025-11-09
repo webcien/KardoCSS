@@ -147,8 +147,9 @@ class KardoCSSCompiler:
         # Dark Mode
         utilities.append(generate_dark_mode())
         
-        # Container Queries
-        utilities.append(generate_container_queries())
+        # Container Queries (opcional)
+        if self.config.get("modules.container_queries", True):
+            utilities.append(generate_container_queries())
         
         self.utilities = utilities
     

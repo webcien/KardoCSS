@@ -7,34 +7,48 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [1.2.0] - 2025-11-08
+## [1.2.0] - 2025-11-09
 
 ### ✨ New Features
 
-- **Container Queries**: Responsive components based on container size
+- **Optional Modules System**: Modular architecture for advanced features
+  - `modules.container_queries` (enabled by default)
+  - `modules.tv_breakpoints` (prepared for v1.3.0)
+  - `modules.fluid_typography` (planned for v1.4.0)
+  - `modules.aspect_ratio` (planned for v1.4.0)
+  - Compiler respects module flags before generating utilities
+  - Config system supports nested module configuration
+- **Container Queries Module**: Now optional, enabled by default
   - New utility classes: `k-cq-{breakpoint}:{utility}`
-  - 4 breakpoints: sm (24rem), md (32rem), lg (48rem), xl (64rem)
+  - 4 breakpoints: sm (320px), md (640px), lg (960px), xl (1280px)
   - Support for display, flex, grid, text, padding, and gap utilities
   - Named containers: `k-container-card`, `k-container-sidebar`, `k-container-main`
   - Container types: `k-container-inline-size`, `k-container-size`, `k-container-normal`
 - **CI/CD Size Check**: GitHub Actions workflow to enforce CSS size limits
   - Automatic size verification on push and pull requests
-  - Limits: 120 KB (unminified), 110 KB (minified)
+  - Limits: 130 KB (unminified), 110 KB (minified)
   - Detailed size reports in job summaries
   - Fails build if size limits are exceeded
 - **Build & Test Workflow**: Multi-version Python testing (3.10, 3.11, 3.12)
   - Automatic CSS compilation verification
   - Content validation (checks for expected classes)
   - Artifact uploads for debugging
+- **KardoTV Preparation**: Structure ready for TV breakpoints module (v1.3.0)
+  - `tv_config` in config.py with wide (1600px) and tv (2400px) breakpoints
+  - Placeholder module `tv_breakpoints.py`
+  - Complete roadmap document
 
 ### 📚 Documentation
 
+- **OPTIONAL_MODULES_GUIDE.md**: Complete guide for optional modules system (English)
+- **OPTIONAL_MODULES_GUIDE.es.md**: Optional modules guide (Spanish)
 - **CONTAINER_QUERIES_GUIDE.md**: Complete guide for container queries (English)
 - **SIZE_CHECK_GUIDE.md**: Complete guide for CI/CD size checks (English)
+- **KARDOTV_ROADMAP.md**: Detailed roadmap for KardoTV module (v1.3.0)
 - **docs/es/CONTAINER_QUERIES_GUIDE.es.md**: Container queries guide (Spanish)
 - **docs/es/SIZE_CHECK_GUIDE.es.md**: Size check guide (Spanish)
 - **examples/container-queries-demo.html**: Interactive demo with 4 examples
-- **README.md**: Updated with v1.2.0 features
+- **README.md**: Updated with v1.2.0 features and optional modules
 
 ### 🔄 Changed
 
