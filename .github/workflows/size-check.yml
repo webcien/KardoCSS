@@ -1,0 +1,97 @@
+name: CSS Size Check
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  check-size:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+    
+    - name: Build CSS
+      run: |
+        python3 build.py
+    
+    - name: Check CSS size (unminified)
+      run: |
+        SIZE=$(wc -c < dist/kardocss.css | tr -d ' ')
+        SIZE_KB=$((SIZE / 1024))
+        MAX_SIZE=122880  # 120 KB limit
+        
+        echo "📊 CSS Size: ${SIZE} bytes (${SIZE_KB} KB)"
+        echo "📏 Limit: ${MAX_SIZE} bytes (120 KB)"
+        
+        if [ $SIZE -gt $MAX_SIZE ]; then
+          echo "❌ ERROR: CSS file is too large!"
+          echo "   Current: ${SIZE_KB} KB"
+          echo "   Maximum: 120 KB"
+          echo "   Exceeded by: $((SIZE_KB - 120)) KB"
+          exit 1
+        else
+          echo "✅ CSS size is within limits"
+          echo "   Used: ${SIZE_KB} KB / 120 KB"
+          echo "   Available: $((120 - SIZE_KB)) KB"
+        fi
+    
+    - name: Check CSS size (minified)
+      run: |
+        SIZE=$(wc -c < dist/kardocss.min.css | tr -d ' ')
+        SIZE_KB=$((SIZE / 1024))
+        MAX_SIZE=112640  # 110 KB limit
+        
+        echo "📊 Minified CSS Size: ${SIZE} bytes (${SIZE_KB} KB)"
+        echo "📏 Limit: ${MAX_SIZE} bytes (110 KB)"
+        
+        if [ $SIZE -gt $MAX_SIZE ]; then
+          echo "❌ ERROR: Minified CSS file is too large!"
+          echo "   Current: ${SIZE_KB} KB"
+          echo "   Maximum: 110 KB"
+          echo "   Exceeded by: $((SIZE_KB - 110)) KB"
+          exit 1
+        else
+          echo "✅ Minified CSS size is within limits"
+          echo "   Used: ${SIZE_KB} KB / 110 KB"
+          echo "   Available: $((110 - SIZE_KB)) KB"
+        fi
+    
+    - name: Size Report
+      if: always()
+      run: |
+        echo "## 📦 CSS Size Report" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "| File | Size | Limit | Status |" >> $GITHUB_STEP_SUMMARY
+        echo "|------|------|-------|--------|" >> $GITHUB_STEP_SUMMARY
+        
+        SIZE_FULL=$(wc -c < dist/kardocss.css | tr -d ' ')
+        SIZE_FULL_KB=$((SIZE_FULL / 1024))
+        STATUS_FULL="✅"
+        if [ $SIZE_FULL -gt 122880 ]; then
+          STATUS_FULL="❌"
+        fi
+        echo "| kardocss.css | ${SIZE_FULL_KB} KB | 120 KB | ${STATUS_FULL} |" >> $GITHUB_STEP_SUMMARY
+        
+        SIZE_MIN=$(wc -c < dist/kardocss.min.css | tr -d ' ')
+        SIZE_MIN_KB=$((SIZE_MIN / 1024))
+        STATUS_MIN="✅"
+        if [ $SIZE_MIN -gt 112640 ]; then
+          STATUS_MIN="❌"
+        fi
+        echo "| kardocss.min.css | ${SIZE_MIN_KB} KB | 110 KB | ${STATUS_MIN} |" >> $GITHUB_STEP_SUMMARY
+        
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 📈 Size Efficiency" >> $GITHUB_STEP_SUMMARY
+        COMPRESSION=$((100 - (SIZE_MIN * 100 / SIZE_FULL)))
+        echo "- **Compression ratio**: ${COMPRESSION}%" >> $GITHUB_STEP_SUMMARY
+        echo "- **Minified savings**: $((SIZE_FULL_KB - SIZE_MIN_KB)) KB" >> $GITHUB_STEP_SUMMARY
+

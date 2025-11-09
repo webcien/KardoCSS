@@ -18,6 +18,7 @@ from kardocss.utilities.badges import generate_badge_utilities
 from kardocss.utilities.gradients import generate_gradient_utilities
 from kardocss.utilities.effects import generate_effect_utilities
 from kardocss.utilities.dark_mode import generate as generate_dark_mode
+from kardocss.utilities.container_queries import generate as generate_container_queries
 from kardocss.compiler.responsive import ResponsiveGenerator
 
 
@@ -74,7 +75,7 @@ class KardoCSSCompiler:
         """Genera estilos base (reset, normalize, etc.)."""
         self.base_styles = [
             "/* KardoCSS - Framework CSS Mobile-First */",
-            "/* Version: 1.1.4 - Bug Fixes: Transforms & Gradients */",
+            "/* Version: 1.2.0 - Container Queries + CI/CD Size Check */",
             "",
             "/* Base Styles */",
             "*, *::before, *::after {",
@@ -145,6 +146,9 @@ class KardoCSSCompiler:
         
         # Dark Mode
         utilities.append(generate_dark_mode())
+        
+        # Container Queries
+        utilities.append(generate_container_queries())
         
         self.utilities = utilities
     

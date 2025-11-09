@@ -16,7 +16,17 @@ KardoCSS is a utility-first CSS framework inspired by Tailwind, but designed to 
 
 ---
 
-## 🆕 What's New in v1.1.3
+## 🆕 What's New in v1.2.0
+
+- ✨ **Container Queries** - Responsive components based on container size (`k-cq-md:flex-row`)
+- ⚙️ **CI/CD Size Check** - Automatic size control to keep the framework lightweight
+
+### Previous Updates
+
+- ✨ **npm Support** - KardoCSS is now available on npm!
+- 🇬🇧 **English Documentation** - All documentation is now primarily in English.
+- ✨ **Enhanced Transitions** - New utilities: `k-transition-none`, `k-delay-*`, `k-ease-bounce`, `k-ease-back-*` (from [Issue #1](https://github.com/webcien/KardoCSS/issues/1))
+- 📦 **Composer Support** - Install KardoCSS in PHP projects with `composer require webcien/kardocss`
 
 - ✨ **npm Support** - KardoCSS is now available on npm!
 - 🇬🇧 **English Documentation** - All documentation is now primarily in English.
@@ -160,7 +170,7 @@ KardoCSS includes a wide range of utilities for layout, spacing, colors, typogra
 - [x] Composer support
 - [x] **npm support**
 - [ ] Improved CLI
-- [ ] Container queries
+- [x] Container queries
 - [ ] Aspect ratio utilities
 - [ ] PostCSS plugin
 

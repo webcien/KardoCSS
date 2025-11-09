@@ -7,6 +7,43 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.2.0] - 2025-11-08
+
+### ✨ New Features
+
+- **Container Queries**: Responsive components based on container size
+  - New utility classes: `k-cq-{breakpoint}:{utility}`
+  - 4 breakpoints: sm (24rem), md (32rem), lg (48rem), xl (64rem)
+  - Support for display, flex, grid, text, padding, and gap utilities
+  - Named containers: `k-container-card`, `k-container-sidebar`, `k-container-main`
+  - Container types: `k-container-inline-size`, `k-container-size`, `k-container-normal`
+- **CI/CD Size Check**: GitHub Actions workflow to enforce CSS size limits
+  - Automatic size verification on push and pull requests
+  - Limits: 120 KB (unminified), 110 KB (minified)
+  - Detailed size reports in job summaries
+  - Fails build if size limits are exceeded
+- **Build & Test Workflow**: Multi-version Python testing (3.10, 3.11, 3.12)
+  - Automatic CSS compilation verification
+  - Content validation (checks for expected classes)
+  - Artifact uploads for debugging
+
+### 📚 Documentation
+
+- **CONTAINER_QUERIES_GUIDE.md**: Complete guide for container queries (English)
+- **SIZE_CHECK_GUIDE.md**: Complete guide for CI/CD size checks (English)
+- **docs/es/CONTAINER_QUERIES_GUIDE.es.md**: Container queries guide (Spanish)
+- **docs/es/SIZE_CHECK_GUIDE.es.md**: Size check guide (Spanish)
+- **examples/container-queries-demo.html**: Interactive demo with 4 examples
+- **README.md**: Updated with v1.2.0 features
+
+### 🔄 Changed
+
+- Updated size limit from 100 KB to 110 KB (minified) to accommodate Container Queries
+- Optimized Container Queries module to minimize CSS size impact (+5.1 KB)
+- CSS size: 105.1 KB minified (from 99.0 KB)
+
+---
+
 ## [1.1.4] - 2025-11-07
 
 ### 🐛 Bug Fixes

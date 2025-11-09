@@ -1,0 +1,69 @@
+name: Build & Test
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.11', '3.12']
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    
+    - name: Build CSS
+      run: |
+        python build.py
+    
+    - name: Verify CSS files exist
+      run: |
+        if [ ! -f dist/kardocss.css ]; then
+          echo "❌ ERROR: kardocss.css not found"
+          exit 1
+        fi
+        if [ ! -f dist/kardocss.min.css ]; then
+          echo "❌ ERROR: kardocss.min.css not found"
+          exit 1
+        fi
+        echo "✅ CSS files generated successfully"
+    
+    - name: Verify CSS content
+      run: |
+        # Check that CSS contains expected classes
+        if ! grep -q "k-bg-primary" dist/kardocss.css; then
+          echo "❌ ERROR: k-bg-primary class not found"
+          exit 1
+        fi
+        if ! grep -q "k-container" dist/kardocss.css; then
+          echo "❌ ERROR: k-container class not found"
+          exit 1
+        fi
+        if ! grep -q "dark:" dist/kardocss.css; then
+          echo "❌ ERROR: dark mode classes not found"
+          exit 1
+        fi
+        echo "✅ CSS content verified"
+    
+    - name: Upload CSS artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: css-files-python-${{ matrix.python-version }}
+        path: dist/*.css
+        retention-days: 7
+

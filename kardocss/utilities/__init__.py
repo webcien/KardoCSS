@@ -14,6 +14,7 @@ from .gradients import generate_gradient_utilities
 from .components import generate_components
 from .effects import generate_effects
 from .dark_mode import generate as generate_dark_mode
+from .container_queries import generate as generate_container_queries
 
 __all__ = [
     'generate_spacing_utilities',
@@ -28,4 +29,5 @@ __all__ = [
     'generate_components',
     'generate_effects',
     'generate_dark_mode',
+    'generate_container_queries',
 ]
