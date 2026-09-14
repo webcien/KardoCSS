@@ -1,5 +1,5 @@
 """Generador de Utilidades de Sizing (Width, Height, Max, Min)"""
-
+  # ACTUALIZADO
 from typing import List
 from kardocss.core.config import KardoCSSConfig
 
