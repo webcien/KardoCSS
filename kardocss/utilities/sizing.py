@@ -55,13 +55,15 @@ def generate_sizing_utilities(config: KardoCSSConfig, prefix: str) -> List[str]:
         ("11/12", "91.666667%"),
     ]
     
+   # Width fracciones
     for name, value in fractions:
-        utilities.append(f".{prefix}w-{name} {{ width: {value}; }}")
+        escaped_name = name.replace("/", "\\/")
+        utilities.append(f".{prefix}w-{escaped_name} {{ width: {value}; }}")
     
-    # Height
-    for name, value in spacing.items():
-        rem_value = value / 16 if value != 0 else 0
-        utilities.append(f".{prefix}h-{name} {{ height: {rem_value}rem; }}")
+	# Height fracciones
+    for name, value in fractions:
+        escaped_name = name.replace("/", "\\/")
+        utilities.append(f".{prefix}h-{escaped_name} {{ height: {value}; }}")
     
     # Height especiales
     utilities.append(f".{prefix}h-auto {{ height: auto; }}")
