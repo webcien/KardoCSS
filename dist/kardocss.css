@@ -1209,53 +1209,31 @@ input, button, textarea, select {
 .k-w-1\/3 { width: 33.333333%; }
 .k-w-2\/3 { width: 66.666667%; }
 .k-w-1\/4 { width: 25%; }
-.k-w-2\/4 { width: 50%; }
 .k-w-3\/4 { width: 75%; }
 .k-w-1\/5 { width: 20%; }
 .k-w-2\/5 { width: 40%; }
 .k-w-3\/5 { width: 60%; }
 .k-w-4\/5 { width: 80%; }
 .k-w-1\/6 { width: 16.666667%; }
-.k-w-2\/6 { width: 33.333333%; }
-.k-w-3\/6 { width: 50%; }
-.k-w-4\/6 { width: 66.666667%; }
 .k-w-5\/6 { width: 83.333333%; }
 .k-w-1\/12 { width: 8.333333%; }
-.k-w-2\/12 { width: 16.666667%; }
-.k-w-3\/12 { width: 25%; }
-.k-w-4\/12 { width: 33.333333%; }
 .k-w-5\/12 { width: 41.666667%; }
-.k-w-6\/12 { width: 50%; }
 .k-w-7\/12 { width: 58.333333%; }
-.k-w-8\/12 { width: 66.666667%; }
-.k-w-9\/12 { width: 75%; }
-.k-w-10\/12 { width: 83.333333%; }
 .k-w-11\/12 { width: 91.666667%; }
 .k-h-1\/2 { height: 50%; }
 .k-h-1\/3 { height: 33.333333%; }
 .k-h-2\/3 { height: 66.666667%; }
 .k-h-1\/4 { height: 25%; }
-.k-h-2\/4 { height: 50%; }
 .k-h-3\/4 { height: 75%; }
 .k-h-1\/5 { height: 20%; }
 .k-h-2\/5 { height: 40%; }
 .k-h-3\/5 { height: 60%; }
 .k-h-4\/5 { height: 80%; }
 .k-h-1\/6 { height: 16.666667%; }
-.k-h-2\/6 { height: 33.333333%; }
-.k-h-3\/6 { height: 50%; }
-.k-h-4\/6 { height: 66.666667%; }
 .k-h-5\/6 { height: 83.333333%; }
 .k-h-1\/12 { height: 8.333333%; }
-.k-h-2\/12 { height: 16.666667%; }
-.k-h-3\/12 { height: 25%; }
-.k-h-4\/12 { height: 33.333333%; }
 .k-h-5\/12 { height: 41.666667%; }
-.k-h-6\/12 { height: 50%; }
 .k-h-7\/12 { height: 58.333333%; }
-.k-h-8\/12 { height: 66.666667%; }
-.k-h-9\/12 { height: 75%; }
-.k-h-10\/12 { height: 83.333333%; }
 .k-h-11\/12 { height: 91.666667%; }
 .k-h-auto { height: auto; }
 .k-h-full { height: 100%; }
@@ -1263,32 +1241,6 @@ input, button, textarea, select {
 .k-h-min { height: min-content; }
 .k-h-max { height: max-content; }
 .k-h-fit { height: fit-content; }
-.k-h-1/2 { height: 50%; }
-.k-h-1/3 { height: 33.333333%; }
-.k-h-2/3 { height: 66.666667%; }
-.k-h-1/4 { height: 25%; }
-.k-h-2/4 { height: 50%; }
-.k-h-3/4 { height: 75%; }
-.k-h-1/5 { height: 20%; }
-.k-h-2/5 { height: 40%; }
-.k-h-3/5 { height: 60%; }
-.k-h-4/5 { height: 80%; }
-.k-h-1/6 { height: 16.666667%; }
-.k-h-2/6 { height: 33.333333%; }
-.k-h-3/6 { height: 50%; }
-.k-h-4/6 { height: 66.666667%; }
-.k-h-5/6 { height: 83.333333%; }
-.k-h-1/12 { height: 8.333333%; }
-.k-h-2/12 { height: 16.666667%; }
-.k-h-3/12 { height: 25%; }
-.k-h-4/12 { height: 33.333333%; }
-.k-h-5/12 { height: 41.666667%; }
-.k-h-6/12 { height: 50%; }
-.k-h-7/12 { height: 58.333333%; }
-.k-h-8/12 { height: 66.666667%; }
-.k-h-9/12 { height: 75%; }
-.k-h-10/12 { height: 83.333333%; }
-.k-h-11/12 { height: 91.666667%; }
 .k-max-w-none { max-width: none; }
 .k-max-w-xs { max-width: 20rem; }
 .k-max-w-sm { max-width: 24rem; }
@@ -3293,53 +3245,31 @@ input, button, textarea, select {
   .k-sm\:w-1\/3 { width: 33.333333%; }
   .k-sm\:w-2\/3 { width: 66.666667%; }
   .k-sm\:w-1\/4 { width: 25%; }
-  .k-sm\:w-2\/4 { width: 50%; }
   .k-sm\:w-3\/4 { width: 75%; }
   .k-sm\:w-1\/5 { width: 20%; }
   .k-sm\:w-2\/5 { width: 40%; }
   .k-sm\:w-3\/5 { width: 60%; }
   .k-sm\:w-4\/5 { width: 80%; }
   .k-sm\:w-1\/6 { width: 16.666667%; }
-  .k-sm\:w-2\/6 { width: 33.333333%; }
-  .k-sm\:w-3\/6 { width: 50%; }
-  .k-sm\:w-4\/6 { width: 66.666667%; }
   .k-sm\:w-5\/6 { width: 83.333333%; }
   .k-sm\:w-1\/12 { width: 8.333333%; }
-  .k-sm\:w-2\/12 { width: 16.666667%; }
-  .k-sm\:w-3\/12 { width: 25%; }
-  .k-sm\:w-4\/12 { width: 33.333333%; }
   .k-sm\:w-5\/12 { width: 41.666667%; }
-  .k-sm\:w-6\/12 { width: 50%; }
   .k-sm\:w-7\/12 { width: 58.333333%; }
-  .k-sm\:w-8\/12 { width: 66.666667%; }
-  .k-sm\:w-9\/12 { width: 75%; }
-  .k-sm\:w-10\/12 { width: 83.333333%; }
   .k-sm\:w-11\/12 { width: 91.666667%; }
   .k-sm\:h-1\/2 { height: 50%; }
   .k-sm\:h-1\/3 { height: 33.333333%; }
   .k-sm\:h-2\/3 { height: 66.666667%; }
   .k-sm\:h-1\/4 { height: 25%; }
-  .k-sm\:h-2\/4 { height: 50%; }
   .k-sm\:h-3\/4 { height: 75%; }
   .k-sm\:h-1\/5 { height: 20%; }
   .k-sm\:h-2\/5 { height: 40%; }
   .k-sm\:h-3\/5 { height: 60%; }
   .k-sm\:h-4\/5 { height: 80%; }
   .k-sm\:h-1\/6 { height: 16.666667%; }
-  .k-sm\:h-2\/6 { height: 33.333333%; }
-  .k-sm\:h-3\/6 { height: 50%; }
-  .k-sm\:h-4\/6 { height: 66.666667%; }
   .k-sm\:h-5\/6 { height: 83.333333%; }
   .k-sm\:h-1\/12 { height: 8.333333%; }
-  .k-sm\:h-2\/12 { height: 16.666667%; }
-  .k-sm\:h-3\/12 { height: 25%; }
-  .k-sm\:h-4\/12 { height: 33.333333%; }
   .k-sm\:h-5\/12 { height: 41.666667%; }
-  .k-sm\:h-6\/12 { height: 50%; }
   .k-sm\:h-7\/12 { height: 58.333333%; }
-  .k-sm\:h-8\/12 { height: 66.666667%; }
-  .k-sm\:h-9\/12 { height: 75%; }
-  .k-sm\:h-10\/12 { height: 83.333333%; }
   .k-sm\:h-11\/12 { height: 91.666667%; }
   .k-sm\:h-auto { height: auto; }
   .k-sm\:h-full { height: 100%; }
@@ -3347,32 +3277,6 @@ input, button, textarea, select {
   .k-sm\:h-min { height: min-content; }
   .k-sm\:h-max { height: max-content; }
   .k-sm\:h-fit { height: fit-content; }
-  .k-sm\:h-1/2 { height: 50%; }
-  .k-sm\:h-1/3 { height: 33.333333%; }
-  .k-sm\:h-2/3 { height: 66.666667%; }
-  .k-sm\:h-1/4 { height: 25%; }
-  .k-sm\:h-2/4 { height: 50%; }
-  .k-sm\:h-3/4 { height: 75%; }
-  .k-sm\:h-1/5 { height: 20%; }
-  .k-sm\:h-2/5 { height: 40%; }
-  .k-sm\:h-3/5 { height: 60%; }
-  .k-sm\:h-4/5 { height: 80%; }
-  .k-sm\:h-1/6 { height: 16.666667%; }
-  .k-sm\:h-2/6 { height: 33.333333%; }
-  .k-sm\:h-3/6 { height: 50%; }
-  .k-sm\:h-4/6 { height: 66.666667%; }
-  .k-sm\:h-5/6 { height: 83.333333%; }
-  .k-sm\:h-1/12 { height: 8.333333%; }
-  .k-sm\:h-2/12 { height: 16.666667%; }
-  .k-sm\:h-3/12 { height: 25%; }
-  .k-sm\:h-4/12 { height: 33.333333%; }
-  .k-sm\:h-5/12 { height: 41.666667%; }
-  .k-sm\:h-6/12 { height: 50%; }
-  .k-sm\:h-7/12 { height: 58.333333%; }
-  .k-sm\:h-8/12 { height: 66.666667%; }
-  .k-sm\:h-9/12 { height: 75%; }
-  .k-sm\:h-10/12 { height: 83.333333%; }
-  .k-sm\:h-11/12 { height: 91.666667%; }
   .k-sm\:max-w-none { max-width: none; }
   .k-sm\:max-w-xs { max-width: 20rem; }
   .k-sm\:max-w-sm { max-width: 24rem; }
@@ -3595,53 +3499,31 @@ input, button, textarea, select {
   .k-md\:w-1\/3 { width: 33.333333%; }
   .k-md\:w-2\/3 { width: 66.666667%; }
   .k-md\:w-1\/4 { width: 25%; }
-  .k-md\:w-2\/4 { width: 50%; }
   .k-md\:w-3\/4 { width: 75%; }
   .k-md\:w-1\/5 { width: 20%; }
   .k-md\:w-2\/5 { width: 40%; }
   .k-md\:w-3\/5 { width: 60%; }
   .k-md\:w-4\/5 { width: 80%; }
   .k-md\:w-1\/6 { width: 16.666667%; }
-  .k-md\:w-2\/6 { width: 33.333333%; }
-  .k-md\:w-3\/6 { width: 50%; }
-  .k-md\:w-4\/6 { width: 66.666667%; }
   .k-md\:w-5\/6 { width: 83.333333%; }
   .k-md\:w-1\/12 { width: 8.333333%; }
-  .k-md\:w-2\/12 { width: 16.666667%; }
-  .k-md\:w-3\/12 { width: 25%; }
-  .k-md\:w-4\/12 { width: 33.333333%; }
   .k-md\:w-5\/12 { width: 41.666667%; }
-  .k-md\:w-6\/12 { width: 50%; }
   .k-md\:w-7\/12 { width: 58.333333%; }
-  .k-md\:w-8\/12 { width: 66.666667%; }
-  .k-md\:w-9\/12 { width: 75%; }
-  .k-md\:w-10\/12 { width: 83.333333%; }
   .k-md\:w-11\/12 { width: 91.666667%; }
   .k-md\:h-1\/2 { height: 50%; }
   .k-md\:h-1\/3 { height: 33.333333%; }
   .k-md\:h-2\/3 { height: 66.666667%; }
   .k-md\:h-1\/4 { height: 25%; }
-  .k-md\:h-2\/4 { height: 50%; }
   .k-md\:h-3\/4 { height: 75%; }
   .k-md\:h-1\/5 { height: 20%; }
   .k-md\:h-2\/5 { height: 40%; }
   .k-md\:h-3\/5 { height: 60%; }
   .k-md\:h-4\/5 { height: 80%; }
   .k-md\:h-1\/6 { height: 16.666667%; }
-  .k-md\:h-2\/6 { height: 33.333333%; }
-  .k-md\:h-3\/6 { height: 50%; }
-  .k-md\:h-4\/6 { height: 66.666667%; }
   .k-md\:h-5\/6 { height: 83.333333%; }
   .k-md\:h-1\/12 { height: 8.333333%; }
-  .k-md\:h-2\/12 { height: 16.666667%; }
-  .k-md\:h-3\/12 { height: 25%; }
-  .k-md\:h-4\/12 { height: 33.333333%; }
   .k-md\:h-5\/12 { height: 41.666667%; }
-  .k-md\:h-6\/12 { height: 50%; }
   .k-md\:h-7\/12 { height: 58.333333%; }
-  .k-md\:h-8\/12 { height: 66.666667%; }
-  .k-md\:h-9\/12 { height: 75%; }
-  .k-md\:h-10\/12 { height: 83.333333%; }
   .k-md\:h-11\/12 { height: 91.666667%; }
   .k-md\:h-auto { height: auto; }
   .k-md\:h-full { height: 100%; }
@@ -3649,32 +3531,6 @@ input, button, textarea, select {
   .k-md\:h-min { height: min-content; }
   .k-md\:h-max { height: max-content; }
   .k-md\:h-fit { height: fit-content; }
-  .k-md\:h-1/2 { height: 50%; }
-  .k-md\:h-1/3 { height: 33.333333%; }
-  .k-md\:h-2/3 { height: 66.666667%; }
-  .k-md\:h-1/4 { height: 25%; }
-  .k-md\:h-2/4 { height: 50%; }
-  .k-md\:h-3/4 { height: 75%; }
-  .k-md\:h-1/5 { height: 20%; }
-  .k-md\:h-2/5 { height: 40%; }
-  .k-md\:h-3/5 { height: 60%; }
-  .k-md\:h-4/5 { height: 80%; }
-  .k-md\:h-1/6 { height: 16.666667%; }
-  .k-md\:h-2/6 { height: 33.333333%; }
-  .k-md\:h-3/6 { height: 50%; }
-  .k-md\:h-4/6 { height: 66.666667%; }
-  .k-md\:h-5/6 { height: 83.333333%; }
-  .k-md\:h-1/12 { height: 8.333333%; }
-  .k-md\:h-2/12 { height: 16.666667%; }
-  .k-md\:h-3/12 { height: 25%; }
-  .k-md\:h-4/12 { height: 33.333333%; }
-  .k-md\:h-5/12 { height: 41.666667%; }
-  .k-md\:h-6/12 { height: 50%; }
-  .k-md\:h-7/12 { height: 58.333333%; }
-  .k-md\:h-8/12 { height: 66.666667%; }
-  .k-md\:h-9/12 { height: 75%; }
-  .k-md\:h-10/12 { height: 83.333333%; }
-  .k-md\:h-11/12 { height: 91.666667%; }
   .k-md\:max-w-none { max-width: none; }
   .k-md\:max-w-xs { max-width: 20rem; }
   .k-md\:max-w-sm { max-width: 24rem; }
@@ -3897,53 +3753,31 @@ input, button, textarea, select {
   .k-lg\:w-1\/3 { width: 33.333333%; }
   .k-lg\:w-2\/3 { width: 66.666667%; }
   .k-lg\:w-1\/4 { width: 25%; }
-  .k-lg\:w-2\/4 { width: 50%; }
   .k-lg\:w-3\/4 { width: 75%; }
   .k-lg\:w-1\/5 { width: 20%; }
   .k-lg\:w-2\/5 { width: 40%; }
   .k-lg\:w-3\/5 { width: 60%; }
   .k-lg\:w-4\/5 { width: 80%; }
   .k-lg\:w-1\/6 { width: 16.666667%; }
-  .k-lg\:w-2\/6 { width: 33.333333%; }
-  .k-lg\:w-3\/6 { width: 50%; }
-  .k-lg\:w-4\/6 { width: 66.666667%; }
   .k-lg\:w-5\/6 { width: 83.333333%; }
   .k-lg\:w-1\/12 { width: 8.333333%; }
-  .k-lg\:w-2\/12 { width: 16.666667%; }
-  .k-lg\:w-3\/12 { width: 25%; }
-  .k-lg\:w-4\/12 { width: 33.333333%; }
   .k-lg\:w-5\/12 { width: 41.666667%; }
-  .k-lg\:w-6\/12 { width: 50%; }
   .k-lg\:w-7\/12 { width: 58.333333%; }
-  .k-lg\:w-8\/12 { width: 66.666667%; }
-  .k-lg\:w-9\/12 { width: 75%; }
-  .k-lg\:w-10\/12 { width: 83.333333%; }
   .k-lg\:w-11\/12 { width: 91.666667%; }
   .k-lg\:h-1\/2 { height: 50%; }
   .k-lg\:h-1\/3 { height: 33.333333%; }
   .k-lg\:h-2\/3 { height: 66.666667%; }
   .k-lg\:h-1\/4 { height: 25%; }
-  .k-lg\:h-2\/4 { height: 50%; }
   .k-lg\:h-3\/4 { height: 75%; }
   .k-lg\:h-1\/5 { height: 20%; }
   .k-lg\:h-2\/5 { height: 40%; }
   .k-lg\:h-3\/5 { height: 60%; }
   .k-lg\:h-4\/5 { height: 80%; }
   .k-lg\:h-1\/6 { height: 16.666667%; }
-  .k-lg\:h-2\/6 { height: 33.333333%; }
-  .k-lg\:h-3\/6 { height: 50%; }
-  .k-lg\:h-4\/6 { height: 66.666667%; }
   .k-lg\:h-5\/6 { height: 83.333333%; }
   .k-lg\:h-1\/12 { height: 8.333333%; }
-  .k-lg\:h-2\/12 { height: 16.666667%; }
-  .k-lg\:h-3\/12 { height: 25%; }
-  .k-lg\:h-4\/12 { height: 33.333333%; }
   .k-lg\:h-5\/12 { height: 41.666667%; }
-  .k-lg\:h-6\/12 { height: 50%; }
   .k-lg\:h-7\/12 { height: 58.333333%; }
-  .k-lg\:h-8\/12 { height: 66.666667%; }
-  .k-lg\:h-9\/12 { height: 75%; }
-  .k-lg\:h-10\/12 { height: 83.333333%; }
   .k-lg\:h-11\/12 { height: 91.666667%; }
   .k-lg\:h-auto { height: auto; }
   .k-lg\:h-full { height: 100%; }
@@ -3951,32 +3785,6 @@ input, button, textarea, select {
   .k-lg\:h-min { height: min-content; }
   .k-lg\:h-max { height: max-content; }
   .k-lg\:h-fit { height: fit-content; }
-  .k-lg\:h-1/2 { height: 50%; }
-  .k-lg\:h-1/3 { height: 33.333333%; }
-  .k-lg\:h-2/3 { height: 66.666667%; }
-  .k-lg\:h-1/4 { height: 25%; }
-  .k-lg\:h-2/4 { height: 50%; }
-  .k-lg\:h-3/4 { height: 75%; }
-  .k-lg\:h-1/5 { height: 20%; }
-  .k-lg\:h-2/5 { height: 40%; }
-  .k-lg\:h-3/5 { height: 60%; }
-  .k-lg\:h-4/5 { height: 80%; }
-  .k-lg\:h-1/6 { height: 16.666667%; }
-  .k-lg\:h-2/6 { height: 33.333333%; }
-  .k-lg\:h-3/6 { height: 50%; }
-  .k-lg\:h-4/6 { height: 66.666667%; }
-  .k-lg\:h-5/6 { height: 83.333333%; }
-  .k-lg\:h-1/12 { height: 8.333333%; }
-  .k-lg\:h-2/12 { height: 16.666667%; }
-  .k-lg\:h-3/12 { height: 25%; }
-  .k-lg\:h-4/12 { height: 33.333333%; }
-  .k-lg\:h-5/12 { height: 41.666667%; }
-  .k-lg\:h-6/12 { height: 50%; }
-  .k-lg\:h-7/12 { height: 58.333333%; }
-  .k-lg\:h-8/12 { height: 66.666667%; }
-  .k-lg\:h-9/12 { height: 75%; }
-  .k-lg\:h-10/12 { height: 83.333333%; }
-  .k-lg\:h-11/12 { height: 91.666667%; }
   .k-lg\:max-w-none { max-width: none; }
   .k-lg\:max-w-xs { max-width: 20rem; }
   .k-lg\:max-w-sm { max-width: 24rem; }
@@ -4199,53 +4007,31 @@ input, button, textarea, select {
   .k-xl\:w-1\/3 { width: 33.333333%; }
   .k-xl\:w-2\/3 { width: 66.666667%; }
   .k-xl\:w-1\/4 { width: 25%; }
-  .k-xl\:w-2\/4 { width: 50%; }
   .k-xl\:w-3\/4 { width: 75%; }
   .k-xl\:w-1\/5 { width: 20%; }
   .k-xl\:w-2\/5 { width: 40%; }
   .k-xl\:w-3\/5 { width: 60%; }
   .k-xl\:w-4\/5 { width: 80%; }
   .k-xl\:w-1\/6 { width: 16.666667%; }
-  .k-xl\:w-2\/6 { width: 33.333333%; }
-  .k-xl\:w-3\/6 { width: 50%; }
-  .k-xl\:w-4\/6 { width: 66.666667%; }
   .k-xl\:w-5\/6 { width: 83.333333%; }
   .k-xl\:w-1\/12 { width: 8.333333%; }
-  .k-xl\:w-2\/12 { width: 16.666667%; }
-  .k-xl\:w-3\/12 { width: 25%; }
-  .k-xl\:w-4\/12 { width: 33.333333%; }
   .k-xl\:w-5\/12 { width: 41.666667%; }
-  .k-xl\:w-6\/12 { width: 50%; }
   .k-xl\:w-7\/12 { width: 58.333333%; }
-  .k-xl\:w-8\/12 { width: 66.666667%; }
-  .k-xl\:w-9\/12 { width: 75%; }
-  .k-xl\:w-10\/12 { width: 83.333333%; }
   .k-xl\:w-11\/12 { width: 91.666667%; }
   .k-xl\:h-1\/2 { height: 50%; }
   .k-xl\:h-1\/3 { height: 33.333333%; }
   .k-xl\:h-2\/3 { height: 66.666667%; }
   .k-xl\:h-1\/4 { height: 25%; }
-  .k-xl\:h-2\/4 { height: 50%; }
   .k-xl\:h-3\/4 { height: 75%; }
   .k-xl\:h-1\/5 { height: 20%; }
   .k-xl\:h-2\/5 { height: 40%; }
   .k-xl\:h-3\/5 { height: 60%; }
   .k-xl\:h-4\/5 { height: 80%; }
   .k-xl\:h-1\/6 { height: 16.666667%; }
-  .k-xl\:h-2\/6 { height: 33.333333%; }
-  .k-xl\:h-3\/6 { height: 50%; }
-  .k-xl\:h-4\/6 { height: 66.666667%; }
   .k-xl\:h-5\/6 { height: 83.333333%; }
   .k-xl\:h-1\/12 { height: 8.333333%; }
-  .k-xl\:h-2\/12 { height: 16.666667%; }
-  .k-xl\:h-3\/12 { height: 25%; }
-  .k-xl\:h-4\/12 { height: 33.333333%; }
   .k-xl\:h-5\/12 { height: 41.666667%; }
-  .k-xl\:h-6\/12 { height: 50%; }
   .k-xl\:h-7\/12 { height: 58.333333%; }
-  .k-xl\:h-8\/12 { height: 66.666667%; }
-  .k-xl\:h-9\/12 { height: 75%; }
-  .k-xl\:h-10\/12 { height: 83.333333%; }
   .k-xl\:h-11\/12 { height: 91.666667%; }
   .k-xl\:h-auto { height: auto; }
   .k-xl\:h-full { height: 100%; }
@@ -4253,32 +4039,6 @@ input, button, textarea, select {
   .k-xl\:h-min { height: min-content; }
   .k-xl\:h-max { height: max-content; }
   .k-xl\:h-fit { height: fit-content; }
-  .k-xl\:h-1/2 { height: 50%; }
-  .k-xl\:h-1/3 { height: 33.333333%; }
-  .k-xl\:h-2/3 { height: 66.666667%; }
-  .k-xl\:h-1/4 { height: 25%; }
-  .k-xl\:h-2/4 { height: 50%; }
-  .k-xl\:h-3/4 { height: 75%; }
-  .k-xl\:h-1/5 { height: 20%; }
-  .k-xl\:h-2/5 { height: 40%; }
-  .k-xl\:h-3/5 { height: 60%; }
-  .k-xl\:h-4/5 { height: 80%; }
-  .k-xl\:h-1/6 { height: 16.666667%; }
-  .k-xl\:h-2/6 { height: 33.333333%; }
-  .k-xl\:h-3/6 { height: 50%; }
-  .k-xl\:h-4/6 { height: 66.666667%; }
-  .k-xl\:h-5/6 { height: 83.333333%; }
-  .k-xl\:h-1/12 { height: 8.333333%; }
-  .k-xl\:h-2/12 { height: 16.666667%; }
-  .k-xl\:h-3/12 { height: 25%; }
-  .k-xl\:h-4/12 { height: 33.333333%; }
-  .k-xl\:h-5/12 { height: 41.666667%; }
-  .k-xl\:h-6/12 { height: 50%; }
-  .k-xl\:h-7/12 { height: 58.333333%; }
-  .k-xl\:h-8/12 { height: 66.666667%; }
-  .k-xl\:h-9/12 { height: 75%; }
-  .k-xl\:h-10/12 { height: 83.333333%; }
-  .k-xl\:h-11/12 { height: 91.666667%; }
   .k-xl\:max-w-none { max-width: none; }
   .k-xl\:max-w-xs { max-width: 20rem; }
   .k-xl\:max-w-sm { max-width: 24rem; }
@@ -4501,53 +4261,31 @@ input, button, textarea, select {
   .k-2xl\:w-1\/3 { width: 33.333333%; }
   .k-2xl\:w-2\/3 { width: 66.666667%; }
   .k-2xl\:w-1\/4 { width: 25%; }
-  .k-2xl\:w-2\/4 { width: 50%; }
   .k-2xl\:w-3\/4 { width: 75%; }
   .k-2xl\:w-1\/5 { width: 20%; }
   .k-2xl\:w-2\/5 { width: 40%; }
   .k-2xl\:w-3\/5 { width: 60%; }
   .k-2xl\:w-4\/5 { width: 80%; }
   .k-2xl\:w-1\/6 { width: 16.666667%; }
-  .k-2xl\:w-2\/6 { width: 33.333333%; }
-  .k-2xl\:w-3\/6 { width: 50%; }
-  .k-2xl\:w-4\/6 { width: 66.666667%; }
   .k-2xl\:w-5\/6 { width: 83.333333%; }
   .k-2xl\:w-1\/12 { width: 8.333333%; }
-  .k-2xl\:w-2\/12 { width: 16.666667%; }
-  .k-2xl\:w-3\/12 { width: 25%; }
-  .k-2xl\:w-4\/12 { width: 33.333333%; }
   .k-2xl\:w-5\/12 { width: 41.666667%; }
-  .k-2xl\:w-6\/12 { width: 50%; }
   .k-2xl\:w-7\/12 { width: 58.333333%; }
-  .k-2xl\:w-8\/12 { width: 66.666667%; }
-  .k-2xl\:w-9\/12 { width: 75%; }
-  .k-2xl\:w-10\/12 { width: 83.333333%; }
   .k-2xl\:w-11\/12 { width: 91.666667%; }
   .k-2xl\:h-1\/2 { height: 50%; }
   .k-2xl\:h-1\/3 { height: 33.333333%; }
   .k-2xl\:h-2\/3 { height: 66.666667%; }
   .k-2xl\:h-1\/4 { height: 25%; }
-  .k-2xl\:h-2\/4 { height: 50%; }
   .k-2xl\:h-3\/4 { height: 75%; }
   .k-2xl\:h-1\/5 { height: 20%; }
   .k-2xl\:h-2\/5 { height: 40%; }
   .k-2xl\:h-3\/5 { height: 60%; }
   .k-2xl\:h-4\/5 { height: 80%; }
   .k-2xl\:h-1\/6 { height: 16.666667%; }
-  .k-2xl\:h-2\/6 { height: 33.333333%; }
-  .k-2xl\:h-3\/6 { height: 50%; }
-  .k-2xl\:h-4\/6 { height: 66.666667%; }
   .k-2xl\:h-5\/6 { height: 83.333333%; }
   .k-2xl\:h-1\/12 { height: 8.333333%; }
-  .k-2xl\:h-2\/12 { height: 16.666667%; }
-  .k-2xl\:h-3\/12 { height: 25%; }
-  .k-2xl\:h-4\/12 { height: 33.333333%; }
   .k-2xl\:h-5\/12 { height: 41.666667%; }
-  .k-2xl\:h-6\/12 { height: 50%; }
   .k-2xl\:h-7\/12 { height: 58.333333%; }
-  .k-2xl\:h-8\/12 { height: 66.666667%; }
-  .k-2xl\:h-9\/12 { height: 75%; }
-  .k-2xl\:h-10\/12 { height: 83.333333%; }
   .k-2xl\:h-11\/12 { height: 91.666667%; }
   .k-2xl\:h-auto { height: auto; }
   .k-2xl\:h-full { height: 100%; }
@@ -4555,32 +4293,6 @@ input, button, textarea, select {
   .k-2xl\:h-min { height: min-content; }
   .k-2xl\:h-max { height: max-content; }
   .k-2xl\:h-fit { height: fit-content; }
-  .k-2xl\:h-1/2 { height: 50%; }
-  .k-2xl\:h-1/3 { height: 33.333333%; }
-  .k-2xl\:h-2/3 { height: 66.666667%; }
-  .k-2xl\:h-1/4 { height: 25%; }
-  .k-2xl\:h-2/4 { height: 50%; }
-  .k-2xl\:h-3/4 { height: 75%; }
-  .k-2xl\:h-1/5 { height: 20%; }
-  .k-2xl\:h-2/5 { height: 40%; }
-  .k-2xl\:h-3/5 { height: 60%; }
-  .k-2xl\:h-4/5 { height: 80%; }
-  .k-2xl\:h-1/6 { height: 16.666667%; }
-  .k-2xl\:h-2/6 { height: 33.333333%; }
-  .k-2xl\:h-3/6 { height: 50%; }
-  .k-2xl\:h-4/6 { height: 66.666667%; }
-  .k-2xl\:h-5/6 { height: 83.333333%; }
-  .k-2xl\:h-1/12 { height: 8.333333%; }
-  .k-2xl\:h-2/12 { height: 16.666667%; }
-  .k-2xl\:h-3/12 { height: 25%; }
-  .k-2xl\:h-4/12 { height: 33.333333%; }
-  .k-2xl\:h-5/12 { height: 41.666667%; }
-  .k-2xl\:h-6/12 { height: 50%; }
-  .k-2xl\:h-7/12 { height: 58.333333%; }
-  .k-2xl\:h-8/12 { height: 66.666667%; }
-  .k-2xl\:h-9/12 { height: 75%; }
-  .k-2xl\:h-10/12 { height: 83.333333%; }
-  .k-2xl\:h-11/12 { height: 91.666667%; }
   .k-2xl\:max-w-none { max-width: none; }
   .k-2xl\:max-w-xs { max-width: 20rem; }
   .k-2xl\:max-w-sm { max-width: 24rem; }

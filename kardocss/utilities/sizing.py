@@ -1,5 +1,5 @@
 """Generador de Utilidades de Sizing (Width, Height, Max, Min)"""
-  # ACTUALIZADO
+# ACTUALIZADO Y OPTIMIZADO - SIN TABS
 from typing import List
 from kardocss.core.config import KardoCSSConfig
 
@@ -12,7 +12,7 @@ def generate_sizing_utilities(config: KardoCSSConfig, prefix: str) -> List[str]:
     
     spacing = config.get("spacing", {})
     
-    # Width
+    # Width basados en spacing
     for name, value in spacing.items():
         rem_value = value / 16 if value != 0 else 0
         utilities.append(f".{prefix}w-{name} {{ width: {rem_value}rem; }}")
@@ -25,42 +25,31 @@ def generate_sizing_utilities(config: KardoCSSConfig, prefix: str) -> List[str]:
     utilities.append(f".{prefix}w-max {{ width: max-content; }}")
     utilities.append(f".{prefix}w-fit {{ width: fit-content; }}")
     
-    # Width fracciones
+    # Fracciones optimizadas
     fractions = [
         ("1/2", "50%"),
         ("1/3", "33.333333%"),
         ("2/3", "66.666667%"),
         ("1/4", "25%"),
-        ("2/4", "50%"),
         ("3/4", "75%"),
         ("1/5", "20%"),
         ("2/5", "40%"),
         ("3/5", "60%"),
         ("4/5", "80%"),
         ("1/6", "16.666667%"),
-        ("2/6", "33.333333%"),
-        ("3/6", "50%"),
-        ("4/6", "66.666667%"),
         ("5/6", "83.333333%"),
         ("1/12", "8.333333%"),
-        ("2/12", "16.666667%"),
-        ("3/12", "25%"),
-        ("4/12", "33.333333%"),
         ("5/12", "41.666667%"),
-        ("6/12", "50%"),
         ("7/12", "58.333333%"),
-        ("8/12", "66.666667%"),
-        ("9/12", "75%"),
-        ("10/12", "83.333333%"),
         ("11/12", "91.666667%"),
     ]
     
-   # Width fracciones
+    # Width fracciones
     for name, value in fractions:
         escaped_name = name.replace("/", "\\/")
         utilities.append(f".{prefix}w-{escaped_name} {{ width: {value}; }}")
     
-	# Height fracciones
+    # Height fracciones
     for name, value in fractions:
         escaped_name = name.replace("/", "\\/")
         utilities.append(f".{prefix}h-{escaped_name} {{ height: {value}; }}")
@@ -72,10 +61,6 @@ def generate_sizing_utilities(config: KardoCSSConfig, prefix: str) -> List[str]:
     utilities.append(f".{prefix}h-min {{ height: min-content; }}")
     utilities.append(f".{prefix}h-max {{ height: max-content; }}")
     utilities.append(f".{prefix}h-fit {{ height: fit-content; }}")
-    
-    # Height fracciones
-    for name, value in fractions:
-        utilities.append(f".{prefix}h-{name} {{ height: {value}; }}")
     
     # Max-Width
     max_widths = {
