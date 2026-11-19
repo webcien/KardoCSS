@@ -82,7 +82,7 @@ class KardoCSSCompiler:
         """Genera estilos base (reset, normalize, etc.)."""
         self.base_styles = [
             "/* KardoCSS - Framework CSS Mobile-First */",
-            "/* Version: 1.3.0 - Accesibilidad + data-k-theme + utilidades */",
+            "/* Version: 1.4.0 - Botón fantasma (k-btn-ghost) */",
             "",
             "/* Base Styles */",
             "*, *::before, *::after {",

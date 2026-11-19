@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.4.0] - 2026-11-13
+
+### Added
+- `.k-btn-ghost`: botón fantasma, sin fondo ni borde visibles (borde transparente de 1px
+  para alinearse con los botones con borde) y fondo suave (`--k-primary-soft`) al pasar.
+- `.k-btn-danger.k-btn-ghost`: variante de peligro que conserva el rojo, con fondo rojo
+  translúcido al pasar, válido en modo claro y oscuro.
+
+### Changed
+- Versión alineada a 1.4.0 en `package.json`, `composer.json`, `setup.py`,
+  `kardocss/__init__.py` y la cabecera compilada (las tres intermedias seguían en 1.2.0).
+
+---
 ## [1.3.0] - 2026-11-13
 
 ### Added

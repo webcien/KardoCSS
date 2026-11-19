@@ -315,6 +315,30 @@ def generate_form_utilities():
     color: var(--k-text-inverse);
 }
 
+/* Botón fantasma (v1.4.0): sin fondo ni borde visibles; al pasar, fondo suave.
+   El borde transparente de 1px lo alinea con los botones que tienen borde. */
+.k-btn-ghost {
+    background-color: transparent;
+    border: 1px solid transparent;
+    color: var(--k-text);
+}
+
+.k-btn-ghost:hover {
+    background-color: var(--k-primary-soft);
+}
+
+/* Fantasma de peligro: conserva el rojo (gana a .k-btn-danger y a su :hover).
+   Fondo translúcido para que funcione en modo claro y oscuro. */
+.k-btn-danger.k-btn-ghost {
+    background-color: transparent;
+    color: var(--k-danger);
+}
+
+.k-btn-danger.k-btn-ghost:hover {
+    background-color: rgba(239, 68, 68, 0.12);
+    color: var(--k-danger);
+}
+
 /* Tamaños de botones */
 .k-btn-sm {
     padding: 0.5rem 1rem;
