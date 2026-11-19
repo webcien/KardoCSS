@@ -192,6 +192,14 @@ class KardoCSSConfig:
                 },
             },
             
+            # Modo oscuro (v1.3.0): selectores que activan el modo manual.
+            # La elección manual (clase o atributo) tiene prioridad sobre
+            # prefers-color-scheme del sistema operativo.
+            "darkMode": {
+                "selectors": [".dark", '[data-k-theme="dark"]'],
+                "lightSelectors": [".light", '[data-k-theme="light"]'],
+            },
+
             # Sistema de Módulos Opcionales
             "modules": {
                 "container_queries": True,   # Container queries (@container)

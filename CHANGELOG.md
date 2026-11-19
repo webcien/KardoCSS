@@ -7,6 +7,44 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.3.0] - 2026-11-13
+
+### Added
+
+- **Accessibility utilities** (`kardocss/utilities/accessibility.py`)
+  - `k-sr-only`: visually hidden, still announced by screen readers
+  - `k-not-sr-only`: reverts it; responsive variants such as `k-md:not-sr-only`
+  - `k-sr-only-focusable`: hidden until it receives keyboard focus ("skip to content" links)
+- **Attribute-based dark mode**: `dark:` utilities and `color-scheme` now also react to
+  `data-k-theme="dark"` on any ancestor (usually `<html>`), in addition to `.dark`.
+  Configurable through `darkMode.selectors` / `darkMode.lightSelectors`.
+- **Utilities**: `k-text-muted` (uses `--k-text-muted`), `k-bg-transparent`, `k-border-0`,
+  `k-border-t`, `k-border-b`, `k-truncate`, `k-whitespace-nowrap`, `k-whitespace-normal`,
+  `k-break-words`, `k-underline`, `k-no-underline`, `k-list-none`.
+- `tools/regression-check.php`: compares two builds and fails if any previous rule
+  disappears or changes. `tools/verify-1.3.cjs` + `examples/v1.3-utilidades.html`:
+  browser checks (Playwright) for the new utilities and the six theme combinations.
+
+### Fixed
+
+- A manual light choice (`.light` or `data-k-theme="light"`) now overrides the operating
+  system's dark preference for `dark:` utilities too. Before, `dark:` utilities applied
+  under `prefers-color-scheme: dark` even when the user had chosen light.
+
+### Changed
+
+- The admin panel theme is no longer published in `dist/`. It now lives in its project
+  (Kardo CEC is the source of truth) and is generated as an example at
+  `examples/backend_theme/theme-backend.example.css`.
+
+### Notes
+
+- Backward compatible: every 1.2.0 rule is kept with the same declarations, except the
+  57 `dark:` utilities and the `color-scheme` root rule, rewritten as described above.
+- Responsive variants use the `k-{breakpoint}:{utility}` form (e.g. `k-md:grid-cols-2`).
+
+---
+
 ## [1.2.0] - 2025-11-09
 
 ### ✨ New Features

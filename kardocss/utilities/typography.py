@@ -31,6 +31,15 @@ def generate_typography_utilities(config: KardoCSSConfig, prefix: str) -> List[s
         utilities.append(f".{prefix}text-{align} {{")
         utilities.append(f"  text-align: {align};")
         utilities.append("}")
+
+    # v1.3.0: desbordamiento, saltos, decoración y listas
+    utilities.append(f".{prefix}truncate {{ overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }}")
+    utilities.append(f".{prefix}whitespace-nowrap {{ white-space: nowrap; }}")
+    utilities.append(f".{prefix}whitespace-normal {{ white-space: normal; }}")
+    utilities.append(f".{prefix}break-words {{ overflow-wrap: anywhere; }}")
+    utilities.append(f".{prefix}underline {{ text-decoration-line: underline; }}")
+    utilities.append(f".{prefix}no-underline {{ text-decoration-line: none; }}")
+    utilities.append(f".{prefix}list-none {{ list-style: none; padding-left: 0; }}")
     
     utilities.append("")
     return utilities

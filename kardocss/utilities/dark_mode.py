@@ -7,7 +7,21 @@ from typing import List
 # No necesitamos importar Config aquí
 
 
-def generate() -> str:
+DEFAULT_DARK_SELECTORS = ['.dark', '[data-k-theme="dark"]']
+DEFAULT_LIGHT_SELECTORS = ['.light', '[data-k-theme="light"]']
+
+
+def _selectors(config=None):
+    """Selectores de modo manual (oscuro, claro) desde la configuración."""
+    if config is None:
+        return DEFAULT_DARK_SELECTORS, DEFAULT_LIGHT_SELECTORS
+    return (
+        config.get("darkMode.selectors", DEFAULT_DARK_SELECTORS),
+        config.get("darkMode.lightSelectors", DEFAULT_LIGHT_SELECTORS),
+    )
+
+
+def generate(config=None) -> str:
     """
     Generate dark mode utilities
     
@@ -56,22 +70,44 @@ def generate() -> str:
   --k-dark-gray-900: #111827;
 }
 
-/* Automatic dark mode with prefers-color-scheme */
-@media (prefers-color-scheme: dark) {
-  :root:not(.light) {
-    color-scheme: dark;
-  }
-}
-
-/* Manual dark mode toggle */
-.dark {
-  color-scheme: dark;
-}
 """)
-    
-    # Generate dark mode utilities for backgrounds
-    css_lines.append("\n/* Dark Mode Background Utilities */")
-    
+
+    dark_selectors, light_selectors = _selectors(config)
+    # La elección manual de "claro" anula la preferencia oscura del sistema.
+    not_light = ":root" + "".join(f":not({s})" for s in light_selectors)
+
+    css_lines.append(f"""
+/* Automatic dark mode with prefers-color-scheme (salvo elección manual de claro) */
+@media (prefers-color-scheme: dark) {{
+  {not_light} {{
+    color-scheme: dark;
+  }}
+}}
+
+/* Manual dark mode toggle (clase .dark o atributo data-k-theme="dark") */
+{", ".join(dark_selectors)} {{
+  color-scheme: dark;
+}}
+""")
+
+    def rule(cls: str, prop: str, value: str) -> str:
+        sel = f".dark\\:k-{cls}"
+        manual = ",\n".join(f"{d} {sel}" for d in dark_selectors)
+        return f"""
+@media (prefers-color-scheme: dark) {{
+  {not_light} {sel} {{
+    {prop}: {value} !important;
+  }}
+}}
+
+{manual} {{
+  {prop}: {value} !important;
+}}
+"""
+
+    def val(v: str) -> str:
+        return f"var({v})" if v.startswith('--') else v
+
     # Main colors
     colors = {
         'primary': '--k-dark-primary',
@@ -85,136 +121,19 @@ def generate() -> str:
         'white': '#ffffff',
         'black': '#000000',
     }
-    
-    for color_name, color_value in colors.items():
-        if color_value.startswith('--'):
-            css_lines.append(f"""
-@media (prefers-color-scheme: dark) {{
-  .dark\\:k-bg-{color_name} {{
-    background-color: var({color_value}) !important;
-  }}
-}}
 
-.dark .dark\\:k-bg-{color_name} {{
-  background-color: var({color_value}) !important;
-}}
-""")
-        else:
-            css_lines.append(f"""
-@media (prefers-color-scheme: dark) {{
-  .dark\\:k-bg-{color_name} {{
-    background-color: {color_value} !important;
-  }}
-}}
+    for title, kind, prop in (
+        ("Background", "bg", "background-color"),
+        ("Text Color", "text", "color"),
+        ("Border Color", "border", "border-color"),
+    ):
+        css_lines.append(f"\n/* Dark Mode {title} Utilities */")
+        for color_name, color_value in colors.items():
+            css_lines.append(rule(f"{kind}-{color_name}", prop, val(color_value)))
+        for i in range(1, 10):
+            shade = i * 100
+            css_lines.append(rule(f"{kind}-gray-{shade}", prop, f"var(--k-dark-gray-{shade})"))
 
-.dark .dark\\:k-bg-{color_name} {{
-  background-color: {color_value} !important;
-}}
-""")
-    
-    # Gray scale backgrounds
-    for i in range(1, 10):
-        shade = i * 100
-        css_lines.append(f"""
-@media (prefers-color-scheme: dark) {{
-  .dark\\:k-bg-gray-{shade} {{
-    background-color: var(--k-dark-gray-{shade}) !important;
-  }}
-}}
-
-.dark .dark\\:k-bg-gray-{shade} {{
-  background-color: var(--k-dark-gray-{shade}) !important;
-}}
-""")
-    
-    # Generate dark mode utilities for text colors
-    css_lines.append("\n/* Dark Mode Text Color Utilities */")
-    
-    for color_name, color_value in colors.items():
-        if color_value.startswith('--'):
-            css_lines.append(f"""
-@media (prefers-color-scheme: dark) {{
-  .dark\\:k-text-{color_name} {{
-    color: var({color_value}) !important;
-  }}
-}}
-
-.dark .dark\\:k-text-{color_name} {{
-  color: var({color_value}) !important;
-}}
-""")
-        else:
-            css_lines.append(f"""
-@media (prefers-color-scheme: dark) {{
-  .dark\\:k-text-{color_name} {{
-    color: {color_value} !important;
-  }}
-}}
-
-.dark .dark\\:k-text-{color_name} {{
-  color: {color_value} !important;
-}}
-""")
-    
-    # Gray scale text colors
-    for i in range(1, 10):
-        shade = i * 100
-        css_lines.append(f"""
-@media (prefers-color-scheme: dark) {{
-  .dark\\:k-text-gray-{shade} {{
-    color: var(--k-dark-gray-{shade}) !important;
-  }}
-}}
-
-.dark .dark\\:k-text-gray-{shade} {{
-  color: var(--k-dark-gray-{shade}) !important;
-}}
-""")
-    
-    # Generate dark mode utilities for border colors
-    css_lines.append("\n/* Dark Mode Border Color Utilities */")
-    
-    for color_name, color_value in colors.items():
-        if color_value.startswith('--'):
-            css_lines.append(f"""
-@media (prefers-color-scheme: dark) {{
-  .dark\\:k-border-{color_name} {{
-    border-color: var({color_value}) !important;
-  }}
-}}
-
-.dark .dark\\:k-border-{color_name} {{
-  border-color: var({color_value}) !important;
-}}
-""")
-        else:
-            css_lines.append(f"""
-@media (prefers-color-scheme: dark) {{
-  .dark\\:k-border-{color_name} {{
-    border-color: {color_value} !important;
-  }}
-}}
-
-.dark .dark\\:k-border-{color_name} {{
-  border-color: {color_value} !important;
-}}
-""")
-    
-    # Gray scale border colors
-    for i in range(1, 10):
-        shade = i * 100
-        css_lines.append(f"""
-@media (prefers-color-scheme: dark) {{
-  .dark\\:k-border-gray-{shade} {{
-    border-color: var(--k-dark-gray-{shade}) !important;
-  }}
-}}
-
-.dark .dark\\:k-border-gray-{shade} {{
-  border-color: var(--k-dark-gray-{shade}) !important;
-}}
-""")
-    
     # Utility for toggling dark mode with JavaScript
     css_lines.append("""
 /* Dark Mode Toggle Utilities */

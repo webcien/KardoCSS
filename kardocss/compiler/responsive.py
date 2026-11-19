@@ -15,7 +15,7 @@ class ResponsiveGenerator:
     Generador de variantes responsive.
     
     Convierte utilidades base en variantes responsive con prefijos de breakpoint.
-    Ejemplo: .k-flex -> .k-md\:flex
+    Ejemplo: .k-flex -> .k-md\\:flex
     """
     
     def __init__(self, config: KardoCSSConfig, prefix: str):
@@ -168,6 +168,9 @@ class ResponsiveGenerator:
             
             # Display
             r'^(container)',
+
+            # Accesibilidad (v1.3.0): k-md:not-sr-only, k-md:sr-only
+            r'^(not-)?sr-only$',
         ]
         
         # Verificar si coincide con algún patrón

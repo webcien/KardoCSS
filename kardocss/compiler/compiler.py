@@ -14,6 +14,7 @@ from kardocss.utilities.typography import generate_typography_utilities
 from kardocss.utilities.layout import generate_layout_utilities
 from kardocss.utilities.borders import generate_border_utilities
 from kardocss.utilities.sizing import generate_sizing_utilities
+from kardocss.utilities.accessibility import generate_accessibility_utilities
 from kardocss.utilities.forms import generate_form_utilities
 from kardocss.utilities.badges import generate_badge_utilities
 from kardocss.utilities.gradients import generate_gradient_utilities
@@ -81,7 +82,7 @@ class KardoCSSCompiler:
         """Genera estilos base (reset, normalize, etc.)."""
         self.base_styles = [
             "/* KardoCSS - Framework CSS Mobile-First */",
-            "/* Version: 1.2.0 - Container Queries + CI/CD Size Check */",
+            "/* Version: 1.3.0 - Accesibilidad + data-k-theme + utilidades */",
             "",
             "/* Base Styles */",
             "*, *::before, *::after {",
@@ -140,6 +141,9 @@ class KardoCSSCompiler:
         
         # Sizing (width, height)
         utilities.extend(generate_sizing_utilities(self.config, prefix))
+
+        # Accessibility (sr-only, focusable)
+        utilities.extend(generate_accessibility_utilities(self.config, prefix))
         
         # Forms (inputs, buttons, etc.)
         utilities.append(generate_form_utilities())
@@ -166,7 +170,7 @@ class KardoCSSCompiler:
         utilities.extend(generate_data_list_utilities(self.config, prefix))
         
         # Dark Mode
-        utilities.append(generate_dark_mode())
+        utilities.append(generate_dark_mode(self.config))
         
         # Container Queries (opcional)
         if self.config.get("modules.container_queries", True):

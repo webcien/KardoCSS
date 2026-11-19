@@ -21,6 +21,11 @@ def generate_border_utilities(config: KardoCSSConfig, prefix: str) -> List[str]:
     for shadow_name, shadow_value in shadows.items():
         class_name = f"{prefix}shadow" if shadow_name == "DEFAULT" else f"{prefix}shadow-{shadow_name}"
         utilities.append(f".{class_name} {{ box-shadow: {shadow_value}; }}")
+
+    # v1.3.0: anchura y separadores ligados al token --k-border
+    utilities.append(f".{prefix}border-0 {{ border-width: 0; }}")
+    utilities.append(f".{prefix}border-t {{ border-top: 1px solid var(--k-border); }}")
+    utilities.append(f".{prefix}border-b {{ border-bottom: 1px solid var(--k-border); }}")
     
     utilities.append("")
     return utilities

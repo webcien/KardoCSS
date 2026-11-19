@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KardoCSS 1.3.0 — utilidades nuevas</title>
+<link rel="stylesheet" href="../dist/kardocss.css">
+</head>
+<body class="k-p-4">
+  <a href="#contenido" id="skip" class="k-sr-only-focusable k-btn k-btn-primary">Saltar al contenido</a>
+
+  <main id="contenido" class="k-container">
+    <h1 class="k-text-2xl k-font-bold k-mb-4">KardoCSS 1.3.0</h1>
+    <p class="k-mb-4">Modo: <code id="modo"></code>
+      <button type="button" class="k-btn k-btn-secondary" data-set="dark">Oscuro</button>
+      <button type="button" class="k-btn k-btn-secondary" data-set="light">Claro</button>
+      <button type="button" class="k-btn k-btn-secondary" data-set="">Sistema</button>
+    </p>
+
+    <h2 class="k-text-lg k-font-semibold k-mb-2">Accesibilidad</h2>
+    <button type="button" class="k-btn k-btn-primary" id="icon-btn">✕<span class="k-sr-only" id="sr">Cerrar</span></button>
+    <span class="k-sr-only k-md:not-sr-only" id="sr-md">Visible desde md</span>
+
+    <h2 class="k-text-lg k-font-semibold k-mt-4 k-mb-2">Modo oscuro (utilidades dark:)</h2>
+    <div id="dark-box" class="k-p-4 k-rounded dark:k-bg-gray-800 dark:k-text-white">Fondo oscuro solo en modo oscuro</div>
+
+    <h2 class="k-text-lg k-font-semibold k-mt-4 k-mb-2">Utilidades</h2>
+    <p id="muted" class="k-text-muted">Texto atenuado (--k-text-muted)</p>
+    <button type="button" id="ghost" class="k-bg-transparent k-border-0 k-underline">Botón transparente</button>
+    <div id="truncate" class="k-truncate" style="width:12rem">Un título muy largo que no cabe en la columna de la tabla</div>
+    <p id="nowrap" class="k-whitespace-nowrap">2026-11-13 10:45</p>
+    <p id="break" class="k-break-words">https://ejemplo.com/una/ruta/muy/larga/sin/espacios/para/romper</p>
+    <a href="#" id="nolink" class="k-no-underline">Enlace sin subrayado</a>
+    <ul id="list" class="k-list-none k-border-t k-border-b k-mt-2"><li>Elemento</li></ul>
+  </main>
+
+  <script>
+    var root = document.documentElement, out = document.getElementById('modo');
+    function show() { out.textContent = root.getAttribute('data-k-theme') || 'sistema'; }
+    document.querySelectorAll('[data-set]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var v = b.getAttribute('data-set');
+        if (v) { root.setAttribute('data-k-theme', v); } else { root.removeAttribute('data-k-theme'); }
+        show();
+      });
+    });
+    show();
+  </script>
+</body>
+</html>

@@ -66,6 +66,12 @@ def generate_color_utilities(config: KardoCSSConfig, prefix: str) -> List[str]:
         utilities.append(f".{prefix}border-{color_name} {{")
         utilities.append(f"  border-color: {color_value};")
         utilities.append("}")
+
+    # v1.3.0: colores semánticos ligados a tokens y transparencia
+    utilities.append("")
+    utilities.append("/* Semantic token colors */")
+    utilities.append(f".{prefix}text-muted {{ color: var(--k-text-muted); }}")
+    utilities.append(f".{prefix}bg-transparent {{ background-color: transparent; }}")
     
     utilities.append("")
     return utilities
