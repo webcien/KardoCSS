@@ -49,6 +49,12 @@ def generate_sizing_utilities(config: KardoCSSConfig, prefix: str) -> List[str]:
         escaped_name = name.replace("/", "\\/")
         utilities.append(f".{prefix}w-{escaped_name} {{ width: {value}; }}")
     
+    # Height basados en spacing (k-h-0 … k-h-32): restaurados, la reescritura de fracciones
+    # los había eliminado por error.
+    for name, value in spacing.items():
+        rem_value = value / 16 if value != 0 else 0
+        utilities.append(f".{prefix}h-{name} {{ height: {rem_value}rem; }}")
+    
     # Height fracciones
     for name, value in fractions:
         escaped_name = name.replace("/", "\\/")

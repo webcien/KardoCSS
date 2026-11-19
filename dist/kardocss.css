@@ -1307,6 +1307,20 @@ input, button, textarea, select {
 .k-w-5\/12 { width: 41.666667%; }
 .k-w-7\/12 { width: 58.333333%; }
 .k-w-11\/12 { width: 91.666667%; }
+.k-h-0 { height: 0rem; }
+.k-h-1 { height: 0.25rem; }
+.k-h-2 { height: 0.5rem; }
+.k-h-3 { height: 0.75rem; }
+.k-h-4 { height: 1.0rem; }
+.k-h-5 { height: 1.25rem; }
+.k-h-6 { height: 1.5rem; }
+.k-h-8 { height: 2.0rem; }
+.k-h-10 { height: 2.5rem; }
+.k-h-12 { height: 3.0rem; }
+.k-h-16 { height: 4.0rem; }
+.k-h-20 { height: 5.0rem; }
+.k-h-24 { height: 6.0rem; }
+.k-h-32 { height: 8.0rem; }
 .k-h-1\/2 { height: 50%; }
 .k-h-1\/3 { height: 33.333333%; }
 .k-h-2\/3 { height: 66.666667%; }
@@ -4367,6 +4381,20 @@ input, button, textarea, select {
   .k-sm\:w-5\/12 { width: 41.666667%; }
   .k-sm\:w-7\/12 { width: 58.333333%; }
   .k-sm\:w-11\/12 { width: 91.666667%; }
+  .k-sm\:h-0 { height: 0rem; }
+  .k-sm\:h-1 { height: 0.25rem; }
+  .k-sm\:h-2 { height: 0.5rem; }
+  .k-sm\:h-3 { height: 0.75rem; }
+  .k-sm\:h-4 { height: 1.0rem; }
+  .k-sm\:h-5 { height: 1.25rem; }
+  .k-sm\:h-6 { height: 1.5rem; }
+  .k-sm\:h-8 { height: 2.0rem; }
+  .k-sm\:h-10 { height: 2.5rem; }
+  .k-sm\:h-12 { height: 3.0rem; }
+  .k-sm\:h-16 { height: 4.0rem; }
+  .k-sm\:h-20 { height: 5.0rem; }
+  .k-sm\:h-24 { height: 6.0rem; }
+  .k-sm\:h-32 { height: 8.0rem; }
   .k-sm\:h-1\/2 { height: 50%; }
   .k-sm\:h-1\/3 { height: 33.333333%; }
   .k-sm\:h-2\/3 { height: 66.666667%; }
@@ -4626,6 +4654,20 @@ input, button, textarea, select {
   .k-md\:w-5\/12 { width: 41.666667%; }
   .k-md\:w-7\/12 { width: 58.333333%; }
   .k-md\:w-11\/12 { width: 91.666667%; }
+  .k-md\:h-0 { height: 0rem; }
+  .k-md\:h-1 { height: 0.25rem; }
+  .k-md\:h-2 { height: 0.5rem; }
+  .k-md\:h-3 { height: 0.75rem; }
+  .k-md\:h-4 { height: 1.0rem; }
+  .k-md\:h-5 { height: 1.25rem; }
+  .k-md\:h-6 { height: 1.5rem; }
+  .k-md\:h-8 { height: 2.0rem; }
+  .k-md\:h-10 { height: 2.5rem; }
+  .k-md\:h-12 { height: 3.0rem; }
+  .k-md\:h-16 { height: 4.0rem; }
+  .k-md\:h-20 { height: 5.0rem; }
+  .k-md\:h-24 { height: 6.0rem; }
+  .k-md\:h-32 { height: 8.0rem; }
   .k-md\:h-1\/2 { height: 50%; }
   .k-md\:h-1\/3 { height: 33.333333%; }
   .k-md\:h-2\/3 { height: 66.666667%; }
@@ -4885,6 +4927,20 @@ input, button, textarea, select {
   .k-lg\:w-5\/12 { width: 41.666667%; }
   .k-lg\:w-7\/12 { width: 58.333333%; }
   .k-lg\:w-11\/12 { width: 91.666667%; }
+  .k-lg\:h-0 { height: 0rem; }
+  .k-lg\:h-1 { height: 0.25rem; }
+  .k-lg\:h-2 { height: 0.5rem; }
+  .k-lg\:h-3 { height: 0.75rem; }
+  .k-lg\:h-4 { height: 1.0rem; }
+  .k-lg\:h-5 { height: 1.25rem; }
+  .k-lg\:h-6 { height: 1.5rem; }
+  .k-lg\:h-8 { height: 2.0rem; }
+  .k-lg\:h-10 { height: 2.5rem; }
+  .k-lg\:h-12 { height: 3.0rem; }
+  .k-lg\:h-16 { height: 4.0rem; }
+  .k-lg\:h-20 { height: 5.0rem; }
+  .k-lg\:h-24 { height: 6.0rem; }
+  .k-lg\:h-32 { height: 8.0rem; }
   .k-lg\:h-1\/2 { height: 50%; }
   .k-lg\:h-1\/3 { height: 33.333333%; }
   .k-lg\:h-2\/3 { height: 66.666667%; }
@@ -5144,6 +5200,20 @@ input, button, textarea, select {
   .k-xl\:w-5\/12 { width: 41.666667%; }
   .k-xl\:w-7\/12 { width: 58.333333%; }
   .k-xl\:w-11\/12 { width: 91.666667%; }
+  .k-xl\:h-0 { height: 0rem; }
+  .k-xl\:h-1 { height: 0.25rem; }
+  .k-xl\:h-2 { height: 0.5rem; }
+  .k-xl\:h-3 { height: 0.75rem; }
+  .k-xl\:h-4 { height: 1.0rem; }
+  .k-xl\:h-5 { height: 1.25rem; }
+  .k-xl\:h-6 { height: 1.5rem; }
+  .k-xl\:h-8 { height: 2.0rem; }
+  .k-xl\:h-10 { height: 2.5rem; }
+  .k-xl\:h-12 { height: 3.0rem; }
+  .k-xl\:h-16 { height: 4.0rem; }
+  .k-xl\:h-20 { height: 5.0rem; }
+  .k-xl\:h-24 { height: 6.0rem; }
+  .k-xl\:h-32 { height: 8.0rem; }
   .k-xl\:h-1\/2 { height: 50%; }
   .k-xl\:h-1\/3 { height: 33.333333%; }
   .k-xl\:h-2\/3 { height: 66.666667%; }
@@ -5403,6 +5473,20 @@ input, button, textarea, select {
   .k-2xl\:w-5\/12 { width: 41.666667%; }
   .k-2xl\:w-7\/12 { width: 58.333333%; }
   .k-2xl\:w-11\/12 { width: 91.666667%; }
+  .k-2xl\:h-0 { height: 0rem; }
+  .k-2xl\:h-1 { height: 0.25rem; }
+  .k-2xl\:h-2 { height: 0.5rem; }
+  .k-2xl\:h-3 { height: 0.75rem; }
+  .k-2xl\:h-4 { height: 1.0rem; }
+  .k-2xl\:h-5 { height: 1.25rem; }
+  .k-2xl\:h-6 { height: 1.5rem; }
+  .k-2xl\:h-8 { height: 2.0rem; }
+  .k-2xl\:h-10 { height: 2.5rem; }
+  .k-2xl\:h-12 { height: 3.0rem; }
+  .k-2xl\:h-16 { height: 4.0rem; }
+  .k-2xl\:h-20 { height: 5.0rem; }
+  .k-2xl\:h-24 { height: 6.0rem; }
+  .k-2xl\:h-32 { height: 8.0rem; }
   .k-2xl\:h-1\/2 { height: 50%; }
   .k-2xl\:h-1\/3 { height: 33.333333%; }
   .k-2xl\:h-2\/3 { height: 66.666667%; }
@@ -5662,6 +5746,20 @@ input, button, textarea, select {
   .k-xxl\:w-5\/12 { width: 41.666667%; }
   .k-xxl\:w-7\/12 { width: 58.333333%; }
   .k-xxl\:w-11\/12 { width: 91.666667%; }
+  .k-xxl\:h-0 { height: 0rem; }
+  .k-xxl\:h-1 { height: 0.25rem; }
+  .k-xxl\:h-2 { height: 0.5rem; }
+  .k-xxl\:h-3 { height: 0.75rem; }
+  .k-xxl\:h-4 { height: 1.0rem; }
+  .k-xxl\:h-5 { height: 1.25rem; }
+  .k-xxl\:h-6 { height: 1.5rem; }
+  .k-xxl\:h-8 { height: 2.0rem; }
+  .k-xxl\:h-10 { height: 2.5rem; }
+  .k-xxl\:h-12 { height: 3.0rem; }
+  .k-xxl\:h-16 { height: 4.0rem; }
+  .k-xxl\:h-20 { height: 5.0rem; }
+  .k-xxl\:h-24 { height: 6.0rem; }
+  .k-xxl\:h-32 { height: 8.0rem; }
   .k-xxl\:h-1\/2 { height: 50%; }
   .k-xxl\:h-1\/3 { height: 33.333333%; }
   .k-xxl\:h-2\/3 { height: 66.666667%; }
@@ -5921,6 +6019,20 @@ input, button, textarea, select {
   .k-uhd\:w-5\/12 { width: 41.666667%; }
   .k-uhd\:w-7\/12 { width: 58.333333%; }
   .k-uhd\:w-11\/12 { width: 91.666667%; }
+  .k-uhd\:h-0 { height: 0rem; }
+  .k-uhd\:h-1 { height: 0.25rem; }
+  .k-uhd\:h-2 { height: 0.5rem; }
+  .k-uhd\:h-3 { height: 0.75rem; }
+  .k-uhd\:h-4 { height: 1.0rem; }
+  .k-uhd\:h-5 { height: 1.25rem; }
+  .k-uhd\:h-6 { height: 1.5rem; }
+  .k-uhd\:h-8 { height: 2.0rem; }
+  .k-uhd\:h-10 { height: 2.5rem; }
+  .k-uhd\:h-12 { height: 3.0rem; }
+  .k-uhd\:h-16 { height: 4.0rem; }
+  .k-uhd\:h-20 { height: 5.0rem; }
+  .k-uhd\:h-24 { height: 6.0rem; }
+  .k-uhd\:h-32 { height: 8.0rem; }
   .k-uhd\:h-1\/2 { height: 50%; }
   .k-uhd\:h-1\/3 { height: 33.333333%; }
   .k-uhd\:h-2\/3 { height: 66.666667%; }
