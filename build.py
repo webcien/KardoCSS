@@ -5,6 +5,7 @@ Compila el CSS desde Python a archivos .css listos para usar
 """
 
 from kardocss.compiler.compiler import KardoCSSCompiler
+from examples.backend_theme.theme import generate_admin_theme
 import os
 import sys
 
@@ -29,6 +30,13 @@ def build_css():
     css_min = compiler.compile(minify=True)
     with open('dist/kardocss.min.css', 'w', encoding='utf-8') as f:
         f.write(css_min)
+
+    # Tema de backend (separado del núcleo: paleta/componentes del panel de
+    # administración de CEC, que ya NO forman parte del framework agnóstico).
+    print("  🎨 Generando theme-backend.css ...")
+    backend_css = "\n".join(generate_admin_theme(compiler.config, compiler.config.get("prefix", "k-")))
+    with open('dist/theme-backend.css', 'w', encoding='utf-8') as f:
+        f.write(backend_css)
     
     # Estadísticas
     css_size_kb = len(css) / 1024
@@ -39,6 +47,7 @@ def build_css():
     print(f"  📦 kardocss.css: {css_size_kb:.1f} KB")
     print(f"  📦 kardocss.min.css: {css_min_size_kb:.1f} KB")
     print(f"  💾 Reducción: {reduction:.1f}%")
+    print(f"  🎨 theme-backend.css: {len(backend_css) / 1024:.1f} KB")
     print(f"\n📁 Archivos guardados en: dist/")
     
     return True

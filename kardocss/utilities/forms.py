@@ -19,27 +19,27 @@ def generate_form_utilities():
     padding: 0.75rem 1rem;
     font-size: 1rem;
     line-height: 1.5;
-    color: #374151;
-    background-color: #ffffff;
-    border: 1px solid #d1d5db;
+    color: var(--k-text);
+    background-color: var(--k-surface);
+    border: 1px solid var(--k-border);
     border-radius: 0.5rem;
     transition: all 0.2s ease;
 }
 
 .k-input:focus {
     outline: none;
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    border-color: var(--k-primary);
+    box-shadow: 0 0 0 3px var(--k-focus-ring);
 }
 
 .k-input:disabled {
-    background-color: #f3f4f6;
+    background-color: var(--k-surface-3);
     cursor: not-allowed;
     opacity: 0.6;
 }
 
 .k-input::placeholder {
-    color: #9ca3af;
+    color: var(--k-placeholder);
 }
 
 /* Textarea moderno */
@@ -49,9 +49,9 @@ def generate_form_utilities():
     padding: 0.75rem 1rem;
     font-size: 1rem;
     line-height: 1.5;
-    color: #374151;
-    background-color: #ffffff;
-    border: 1px solid #d1d5db;
+    color: var(--k-text);
+    background-color: var(--k-surface);
+    border: 1px solid var(--k-border);
     border-radius: 0.5rem;
     transition: all 0.2s ease;
     resize: vertical;
@@ -60,8 +60,8 @@ def generate_form_utilities():
 
 .k-textarea:focus {
     outline: none;
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    border-color: var(--k-primary);
+    box-shadow: 0 0 0 3px var(--k-focus-ring);
 }
 
 /* Select moderno */
@@ -71,9 +71,9 @@ def generate_form_utilities():
     padding: 0.75rem 1rem;
     font-size: 1rem;
     line-height: 1.5;
-    color: #374151;
-    background-color: #ffffff;
-    border: 1px solid #d1d5db;
+    color: var(--k-text);
+    background-color: var(--k-surface);
+    border: 1px solid var(--k-border);
     border-radius: 0.5rem;
     transition: all 0.2s ease;
     cursor: pointer;
@@ -81,8 +81,8 @@ def generate_form_utilities():
 
 .k-select:focus {
     outline: none;
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    border-color: var(--k-primary);
+    box-shadow: 0 0 0 3px var(--k-focus-ring);
 }
 
 /* Label moderno */
@@ -90,7 +90,7 @@ def generate_form_utilities():
     display: block;
     font-size: 0.875rem;
     font-weight: 600;
-    color: #374151;
+    color: var(--k-text);
     margin-bottom: 0.5rem;
 }
 
@@ -109,7 +109,7 @@ def generate_form_utilities():
 .k-input-icon {
     position: absolute;
     left: 1rem;
-    color: #9ca3af;
+    color: var(--k-placeholder);
     pointer-events: none;
 }
 
@@ -130,22 +130,22 @@ def generate_form_utilities():
 
 /* Input con error */
 .k-input-error {
-    border-color: #ef4444;
+    border-color: var(--k-danger);
 }
 
 .k-input-error:focus {
-    border-color: #ef4444;
-    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+    border-color: var(--k-danger);
+    box-shadow: 0 0 0 3px var(--k-danger-soft);
 }
 
 /* Input con éxito */
 .k-input-success {
-    border-color: #10b981;
+    border-color: var(--k-success);
 }
 
 .k-input-success:focus {
-    border-color: #10b981;
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+    border-color: var(--k-success);
+    box-shadow: 0 0 0 3px var(--k-success-soft);
 }
 
 /* Mensaje de error */
@@ -153,7 +153,7 @@ def generate_form_utilities():
     display: block;
     margin-top: 0.5rem;
     font-size: 0.875rem;
-    color: #ef4444;
+    color: var(--k-danger);
 }
 
 /* Mensaje de ayuda */
@@ -161,7 +161,7 @@ def generate_form_utilities():
     display: block;
     margin-top: 0.5rem;
     font-size: 0.875rem;
-    color: #6b7280;
+    color: var(--k-text-muted);
 }
 
 /* Checkbox y radio modernos */
@@ -169,7 +169,7 @@ def generate_form_utilities():
 .k-radio {
     width: 1.25rem;
     height: 1.25rem;
-    border: 2px solid #d1d5db;
+    border: 2px solid var(--k-border);
     border-radius: 0.25rem;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -181,14 +181,14 @@ def generate_form_utilities():
 
 .k-checkbox:checked,
 .k-radio:checked {
-    background-color: #3b82f6;
-    border-color: #3b82f6;
+    background-color: var(--k-primary);
+    border-color: var(--k-primary);
 }
 
 .k-checkbox:focus,
 .k-radio:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    box-shadow: 0 0 0 3px var(--k-focus-ring);
 }
 
 /* Switch toggle */
@@ -212,7 +212,7 @@ def generate_form_utilities():
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #d1d5db;
+    background-color: var(--k-border);
     transition: 0.3s;
     border-radius: 1.75rem;
 }
@@ -224,13 +224,13 @@ def generate_form_utilities():
     width: 1.25rem;
     left: 0.25rem;
     bottom: 0.25rem;
-    background-color: white;
+    background-color: var(--k-text-inverse);
     transition: 0.3s;
     border-radius: 50%;
 }
 
 .k-switch input:checked + .k-switch-slider {
-    background-color: #3b82f6;
+    background-color: var(--k-primary);
 }
 
 .k-switch input:checked + .k-switch-slider:before {
@@ -256,7 +256,7 @@ def generate_form_utilities():
 
 .k-btn:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--k-shadow-md);
 }
 
 .k-btn:active {
@@ -269,50 +269,50 @@ def generate_form_utilities():
 }
 
 .k-btn-primary {
-    background-color: #3b82f6;
-    color: #ffffff;
+    background-color: var(--k-primary);
+    color: var(--k-text-inverse);
 }
 
 .k-btn-primary:hover {
-    background-color: #2563eb;
+    background-color: var(--k-primary-hover);
 }
 
 .k-btn-secondary {
-    background-color: #6b7280;
-    color: #ffffff;
+    background-color: var(--k-text-muted);
+    color: var(--k-text-inverse);
 }
 
 .k-btn-secondary:hover {
-    background-color: #4b5563;
+    background-color: var(--k-text);
 }
 
 .k-btn-success {
-    background-color: #10b981;
-    color: #ffffff;
+    background-color: var(--k-success);
+    color: var(--k-text-inverse);
 }
 
 .k-btn-success:hover {
-    background-color: #059669;
+    background-color: var(--k-success-hover);
 }
 
 .k-btn-danger {
-    background-color: #ef4444;
-    color: #ffffff;
+    background-color: var(--k-danger);
+    color: var(--k-text-inverse);
 }
 
 .k-btn-danger:hover {
-    background-color: #dc2626;
+    background-color: var(--k-danger-hover);
 }
 
 .k-btn-outline {
     background-color: transparent;
-    border: 2px solid #3b82f6;
-    color: #3b82f6;
+    border: 2px solid var(--k-primary);
+    color: var(--k-primary);
 }
 
 .k-btn-outline:hover {
-    background-color: #3b82f6;
-    color: #ffffff;
+    background-color: var(--k-primary);
+    color: var(--k-text-inverse);
 }
 
 /* Tamaños de botones */
@@ -350,7 +350,7 @@ def generate_form_utilities():
 
 /* Fieldset moderno */
 .k-fieldset {
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--k-divider);
     border-radius: 0.5rem;
     padding: 1.5rem;
     margin-bottom: 1.5rem;
@@ -359,7 +359,7 @@ def generate_form_utilities():
 .k-legend {
     font-size: 1.125rem;
     font-weight: 600;
-    color: #111827;
+    color: var(--k-text);
     padding: 0 0.5rem;
 }
 
@@ -368,7 +368,7 @@ def generate_form_utilities():
     display: block;
     width: 100%;
     padding: 0.75rem;
-    border: 2px dashed #d1d5db;
+    border: 2px dashed var(--k-border);
     border-radius: 0.5rem;
     text-align: center;
     cursor: pointer;
@@ -376,8 +376,8 @@ def generate_form_utilities():
 }
 
 .k-file-input:hover {
-    border-color: #3b82f6;
-    background-color: #eff6ff;
+    border-color: var(--k-primary);
+    background-color: var(--k-info-soft);
 }
 
 /* Input con contador de caracteres */
@@ -387,20 +387,20 @@ def generate_form_utilities():
     align-items: center;
     margin-top: 0.5rem;
     font-size: 0.875rem;
-    color: #6b7280;
+    color: var(--k-text-muted);
 }
 
 /* Validación en tiempo real */
 .k-input.k-validating {
-    border-color: #f59e0b;
+    border-color: var(--k-warning);
 }
 
 .k-input.k-valid {
-    border-color: #10b981;
+    border-color: var(--k-success);
 }
 
 .k-input.k-invalid {
-    border-color: #ef4444;
+    border-color: var(--k-danger);
 }
 
 /* Loading state */
@@ -416,8 +416,8 @@ def generate_form_utilities():
     transform: translateY(-50%);
     width: 1rem;
     height: 1rem;
-    border: 2px solid #e5e7eb;
-    border-top-color: #3b82f6;
+    border: 2px solid var(--k-divider);
+    border-top-color: var(--k-primary);
     border-radius: 50%;
     animation: k-spin 0.6s linear infinite;
 }

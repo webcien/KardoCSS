@@ -13,6 +13,9 @@ from .badges import generate_badge_utilities
 from .gradients import generate_gradient_utilities
 from .components import generate_components
 from .effects import generate_effects
+from .nav import generate_nav_utilities
+from .menu import generate_menu_utilities
+from .data import generate_data_list_utilities
 from .dark_mode import generate as generate_dark_mode
 from .container_queries import generate as generate_container_queries
 
@@ -28,6 +31,9 @@ __all__ = [
     'generate_gradient_utilities',
     'generate_components',
     'generate_effects',
+    'generate_nav_utilities',
+    'generate_menu_utilities',
+    'generate_data_list_utilities',
     'generate_dark_mode',
     'generate_container_queries',
 ]

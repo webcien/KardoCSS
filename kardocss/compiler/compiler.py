@@ -7,6 +7,7 @@ Optimizado para rendimiento y tamaño de archivo.
 
 from typing import List, Dict, Any
 from kardocss.core.config import KardoCSSConfig
+from kardocss.utilities.tokens import generate_tokens
 from kardocss.utilities.spacing import generate_spacing_utilities
 from kardocss.utilities.colors import generate_color_utilities
 from kardocss.utilities.typography import generate_typography_utilities
@@ -17,8 +18,13 @@ from kardocss.utilities.forms import generate_form_utilities
 from kardocss.utilities.badges import generate_badge_utilities
 from kardocss.utilities.gradients import generate_gradient_utilities
 from kardocss.utilities.effects import generate_effect_utilities
+from kardocss.utilities.components import generate_components
+from kardocss.utilities.nav import generate_nav_utilities
+from kardocss.utilities.menu import generate_menu_utilities
+from kardocss.utilities.data import generate_data_list_utilities
 from kardocss.utilities.dark_mode import generate as generate_dark_mode
 from kardocss.utilities.container_queries import generate as generate_container_queries
+from kardocss.utilities.tv_breakpoints import generate as generate_tv_breakpoints
 from kardocss.compiler.responsive import ResponsiveGenerator
 
 
@@ -113,7 +119,10 @@ class KardoCSSCompiler:
         
         # Generar utilidades de cada categoría
         utilities = []
-        
+
+        # Design tokens (neutral cores)
+        utilities.extend(generate_tokens())
+
         # Spacing (margin, padding)
         utilities.extend(generate_spacing_utilities(self.config, prefix))
         
@@ -144,12 +153,27 @@ class KardoCSSCompiler:
         # Effects (shadows, opacity, transitions, animations)
         utilities.extend(generate_effect_utilities(self.config, prefix))
         
+        # Components (cards, navbar, sidebar, tables, alerts, modals, etc.)
+        utilities.append(generate_components())
+        
+        # Nav / Sticky / Glassmorphism utilities
+        utilities.extend(generate_nav_utilities(self.config, prefix))
+        
+        # Mobile off-canvas menu utilities (hamburger, drawer, overlay)
+        utilities.extend(generate_menu_utilities(self.config, prefix))
+        
+        # Data list (responsive card list)
+        utilities.extend(generate_data_list_utilities(self.config, prefix))
+        
         # Dark Mode
         utilities.append(generate_dark_mode())
         
         # Container Queries (opcional)
         if self.config.get("modules.container_queries", True):
             utilities.append(generate_container_queries())
+
+        # TV Breakpoints (opcional; por defecto desactivado)
+        utilities.append(generate_tv_breakpoints(self.config))
         
         self.utilities = utilities
     

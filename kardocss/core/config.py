@@ -127,11 +127,13 @@ class KardoCSSConfig:
             
             # Breakpoints (mobile-first)
             "breakpoints": {
-                "sm": "640px",   # Teléfonos grandes
-                "md": "768px",   # Tablets
-                "lg": "1024px",  # Laptops
-                "xl": "1280px",  # Desktops
-                "2xl": "1536px", # Desktops grandes
+                "sm": "640px",    # Fin del teléfono puro; 2 columnas ligeras
+                "md": "768px",    # Tablet; grids de 2-3 columnas
+                "lg": "1024px",   # Escritorio: nav completa, sidebars fijos
+                "xl": "1280px",   # Escritorio estándar; max-width de contenedor
+                "2xl": "1536px",  # Desktop grande / QHD
+                "xxl": "1920px",  # Full HD / TVs 1080p (alias: tv)
+                "uhd": "2560px",  # Ultra-wide / 4K / video walls
             },
             
             # Border radius
@@ -199,10 +201,10 @@ class KardoCSSConfig:
                 "backdrop_filters": False,   # Backdrop filters - futuro
             },
             
-            # Configuración de Módulo TV (para v1.3.0)
+            # Configuración de Módulo TV (breakpoints grandes + contexto TV)
             "tv_config": {
-                "wide_breakpoint": "1600px",
-                "tv_breakpoint": "2400px",
+                "wide_breakpoint": "1920px",  # xxl / tv: Full HD, TV 1080p
+                "tv_breakpoint": "2560px",    # uhd: ultra-wide, 4K, video walls
                 "text_scale_wide": 1.2,
                 "text_scale_tv": 1.4,
                 "space_scale_wide": 1.1,
