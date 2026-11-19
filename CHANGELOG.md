@@ -17,6 +17,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   no tienen variante oscura). Los nombres heredados sin prefijo (`.card`, `.alert`, `.table`)
   no cambian.
 
+### Fixed
+- Clases de fracciones (`.k-w-1\/2`, `.k-h-1\/3`…): la barra se escapa en el selector. Sin
+  escapar el selector no era válido y el navegador descartaba la regla. Se retiran las fracciones
+  duplicadas (2/4, 3/6, 6/12…), que nunca llegaron a funcionar por ese motivo.
+- Alturas de la escala de espaciado (`.k-h-0` … `.k-h-32`): la reescritura de las fracciones las
+  había eliminado por error; se restauran.
+
+### Changed
+- CI: los límites de tamaño se miden en gzip (`gzip -9`), que es lo que se transfiere: 30 KB para
+  `kardocss.css` y 26 KB para `kardocss.min.css`. El tamaño sin comprimir solo se informa.
+
 ---
 ## [1.4.0] - 2026-11-13
 
