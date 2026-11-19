@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.5.0] - 2026-11-13
+
+### Added
+- Componentes con prefijo `k-`, siguiendo la convención actual del framework: `.k-card` y
+  `.k-card-header`; `.k-alert` con `.k-alert-error`, `.k-alert-success`, `.k-alert-warning` y
+  `.k-alert-info`; `.k-table`; `.k-chip`. Solo usan tokens; los avisos derivan sus colores del
+  color semántico con `color-mix`, así funcionan en modo claro y oscuro (los tokens `--k-*-soft`
+  no tienen variante oscura). Los nombres heredados sin prefijo (`.card`, `.alert`, `.table`)
+  no cambian.
+
+---
 ## [1.4.0] - 2026-11-13
 
 ### Added

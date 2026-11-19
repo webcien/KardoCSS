@@ -9,7 +9,7 @@ Licencia: MIT
 Autor: Juan Quezada
 """
 
-__version__ = "1.4.0"
+__version__ = "1.5.0"
 __author__ = "Juan Quezada"
 __license__ = "MIT"
 

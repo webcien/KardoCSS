@@ -1,5 +1,5 @@
 /* KardoCSS - Framework CSS Mobile-First */
-/* Version: 1.4.0 - Botón fantasma (k-btn-ghost) */
+/* Version: 1.5.0 - Componentes k-card, k-alert, k-table y k-chip */
 
 /* Base Styles */
 *, *::before, *::after {
@@ -3048,6 +3048,95 @@ input, button, textarea, select {
     .sidebar.open {
         transform: translateX(0);
     }
+}
+
+/* ===================================
+   Componentes con prefijo k- (v1.5.0)
+   Convención actual del framework, junto a los nombres heredados sin prefijo
+   (.card, .alert, .table). Solo usan tokens; los avisos derivan sus colores del
+   color semántico con color-mix para funcionar en modo claro y oscuro.
+   =================================== */
+
+/* Tarjeta */
+.k-card {
+    background-color: var(--k-surface);
+    border: 1px solid var(--k-border);
+    border-radius: var(--k-radius-lg);
+    padding: 1.5rem;
+}
+
+.k-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+/* Aviso: base neutra (sin fondo) y variantes semánticas */
+.k-alert {
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--k-border);
+    border-radius: var(--k-radius);
+    margin-bottom: 1rem;
+}
+
+.k-alert-error {
+    background-color: color-mix(in srgb, var(--k-danger) 12%, transparent);
+    border-color: color-mix(in srgb, var(--k-danger) 35%, transparent);
+    color: color-mix(in srgb, var(--k-danger) 70%, var(--k-text));
+}
+
+.k-alert-success {
+    background-color: color-mix(in srgb, var(--k-success) 12%, transparent);
+    border-color: color-mix(in srgb, var(--k-success) 35%, transparent);
+    color: color-mix(in srgb, var(--k-success) 70%, var(--k-text));
+}
+
+.k-alert-warning {
+    background-color: color-mix(in srgb, var(--k-warning) 12%, transparent);
+    border-color: color-mix(in srgb, var(--k-warning) 35%, transparent);
+    color: color-mix(in srgb, var(--k-warning) 70%, var(--k-text));
+}
+
+.k-alert-info {
+    background-color: color-mix(in srgb, var(--k-info) 12%, transparent);
+    border-color: color-mix(in srgb, var(--k-info) 35%, transparent);
+    color: color-mix(in srgb, var(--k-info) 70%, var(--k-text));
+}
+
+/* Tabla */
+.k-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Celdas con especificidad de elemento (0,0,1): ganan a las reglas base de th/td y pierden ante
+   cualquier utilidad (k-text-right, k-p-*…) o clase del tema, que conservan su efecto. */
+:where(.k-table) th,
+:where(.k-table) td {
+    padding: 0.75rem;
+    text-align: start;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--k-border);
+}
+
+:where(.k-table) th {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--k-text-muted);
+}
+
+/* Etiqueta (chip) */
+.k-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.65rem;
+    border-radius: var(--k-radius-full);
+    background-color: var(--k-surface-2);
+    color: var(--k-text);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    text-decoration: none;
 }
 
 /* Nav / Sticky / Glassmorphism Utilities */
